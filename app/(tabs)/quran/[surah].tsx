@@ -35,6 +35,8 @@ export default function SurahReader() {
   }
 
   useEffect(() => {
+    // `load` awaits a network call before touching state.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     load();
     loadBookmarks().then((marks) =>
       setBookmarked(new Set(marks.filter((m) => m.surah === surahNumber).map((m) => m.ayah))),

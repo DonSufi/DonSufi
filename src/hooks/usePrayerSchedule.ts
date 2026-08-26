@@ -19,6 +19,8 @@ export function usePrayerSchedule(
     return () => clearInterval(id);
   }, []);
 
+  const todayKey = dateKey(now);
+
   return useMemo(() => {
     if (!coords) return null;
     const tomorrowDate = new Date(now);
@@ -28,7 +30,7 @@ export function usePrayerSchedule(
       tomorrow: computeDailyPrayerTimes(coords, tomorrowDate, settings),
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [coords?.latitude, coords?.longitude, settings, dateKey(now)]);
+  }, [coords?.latitude, coords?.longitude, settings, todayKey]);
 }
 
 export function useClock(intervalMs = 1000): Date {

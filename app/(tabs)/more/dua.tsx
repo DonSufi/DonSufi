@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Pressable, View } from 'react-native';
+import { Pressable } from 'react-native';
 
 import { Card } from '../../../src/components/Card';
 import { Screen } from '../../../src/components/Screen';

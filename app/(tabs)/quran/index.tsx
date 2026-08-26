@@ -34,6 +34,8 @@ export default function QuranIndex() {
   }
 
   useEffect(() => {
+    // `load` awaits a network call before touching state.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     load();
     loadLastRead().then(setLastRead);
   }, []);

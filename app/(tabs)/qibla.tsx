@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { router } from 'expo-router';
 import * as Location from 'expo-location';
-import { Animated, View } from 'react-native';
+import { View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 
@@ -24,7 +24,6 @@ export default function QiblaScreen() {
   const { t } = useTranslation();
   const { location } = useAppState();
   const [headingState, setHeadingState] = useState<HeadingState>({ status: 'loading' });
-  const rotation = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     let subscription: Location.LocationSubscription | null = null;
@@ -104,8 +103,6 @@ export default function QiblaScreen() {
   }
 
   const relativeAngle = ((bearing - headingState.heading) % 360 + 360) % 360;
-  rotation.setValue(relativeAngle);
-  const spin = rotation.interpolate({ inputRange: [0, 360], outputRange: ['0deg', '360deg'] });
   const isLowAccuracy = headingState.accuracy < 15 && headingState.accuracy >= 0;
 
   return (
@@ -135,9 +132,9 @@ export default function QiblaScreen() {
             justifyContent: 'center',
           }}
         >
-          <Animated.View style={{ transform: [{ rotate: spin }] }}>
+          <View style={{ transform: [{ rotate: `${relativeAngle}deg` }] }}>
             <Ionicons name="navigate" size={96} color={theme.accent} />
-          </Animated.View>
+          </View>
         </View>
       </View>
 

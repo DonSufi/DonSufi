@@ -35,6 +35,9 @@ export default function MosquesScreen() {
   }
 
   useEffect(() => {
+    // `load` itself awaits a network call before touching state, so this is
+    // not a synchronous setState-during-effect despite the lint heuristic.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     load();
     loadFavoriteMosques().then(setFavorites);
     // eslint-disable-next-line react-hooks/exhaustive-deps

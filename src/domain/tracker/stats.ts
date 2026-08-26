@@ -16,8 +16,7 @@ export function statsForDay(history: PrayerTrackerHistory, date: string): Tracke
 export function currentStreak(history: PrayerTrackerHistory, fromDate: Date = new Date()): number {
   let streak = 0;
   const cursor = new Date(fromDate);
-  // eslint-disable-next-line no-constant-condition
-  while (true) {
+  for (;;) {
     const key = toDateKey(cursor);
     const day = history[key];
     const allPrayed = day && PRAYERS.every((p) => day[p] === 'prayed');

@@ -31,9 +31,13 @@ export function Text({ variant = 'body', color = 'primary', weight, center, styl
     display: '700',
   };
 
+  const isPressable = typeof rest.onPress === 'function';
+
   return (
     <RNText
       allowFontScaling
+      accessible
+      accessibilityRole={isPressable ? 'button' : rest.accessibilityRole}
       style={[
         {
           fontSize: theme.type[variant] * theme.textScale,
@@ -41,6 +45,7 @@ export function Text({ variant = 'body', color = 'primary', weight, center, styl
           fontWeight: weight ?? defaultWeight[variant],
           textAlign: center ? 'center' : undefined,
         },
+        isPressable && theme.largeTouchTargets && { paddingVertical: 6 },
         style,
       ]}
       {...rest}

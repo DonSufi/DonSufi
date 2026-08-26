@@ -13,7 +13,8 @@ export default function CalendarScreen() {
   const theme = useTheme();
   const now = useClock(60_000);
   const hijriToday = gregorianToHijri(now);
-  const events = useMemo(() => keyDatesForGregorianYear(now.getFullYear()), [now.getFullYear()]);
+  const currentYear = now.getFullYear();
+  const events = useMemo(() => keyDatesForGregorianYear(currentYear), [currentYear]);
 
   return (
     <Screen>
