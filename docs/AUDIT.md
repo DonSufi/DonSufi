@@ -42,7 +42,7 @@ Self-audit performed before declaring this build complete, as required by the pr
 
 ✅ Onboarding is a short, skippable-where-sensible 7-step flow with sensible defaults (Muslim World League, Standard Asr, notifications on) that a first-time user can accept without configuring anything.
 
-🟡 Visual polish (custom illustrations, refined micro-interactions, a real brand icon) is intentionally modest — the design system (color/type/spacing tokens, consistent components) is real and consistently applied, but this is a code-first build, not a design-tool-first one; a dedicated visual design pass would raise the ceiling further.
+🟡 Visual polish (custom illustrations, refined micro-interactions) is intentionally modest — the design system (color/type/spacing tokens, consistent components) is real and consistently applied, but this is a code-first build, not a design-tool-first one; a dedicated visual design pass would raise the ceiling further. ✅ The app now ships a real, cohesive icon set (an 8-pointed geometric star in the app's own palette, replacing Expo's generic template placeholders) rather than a "real brand icon" gap — see `docs/LIMITATIONS.md` for the residual caveat that it hasn't been reviewed by a human designer or seen on real hardware.
 
 ## Accessibility
 

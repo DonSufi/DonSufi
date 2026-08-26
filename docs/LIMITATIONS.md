@@ -50,7 +50,8 @@ This app was built in a single sandboxed development environment with **no iOS/A
 
 ## Branding assets
 
-- App icon, splash screen, and adaptive-icon foreground/background images are still the default Expo template placeholders (`assets/icon.png`, etc.). These need real DonSufi brand artwork before an app store submission — this is a design asset gap, not a code gap.
+- **Closed**: the default Expo template placeholders have been replaced with a real, cohesive icon set (`assets/icon.png`, `android-icon-{foreground,background,monochrome}.png`, `favicon.png`, `splash-icon.png`) -- an 8-pointed Islamic geometric star (a classic, non-figurative motif, deliberately avoiding the "excessive mosque imagery" the spec warns against) in the app's own emerald/gold palette, generated at each platform's exact required resolution with the foreground/monochrome/splash variants correctly sized within Android's adaptive-icon safe zone and genuinely transparent (verified by inspecting the PNG color type, not just by eye). `app.json`'s `expo-splash-screen` and `expo-notifications` plugin configs were updated to match -- notably, the Android status-bar notification icon now correctly points at the flat white-silhouette monochrome asset rather than the full-color square icon, since Android renders only a colored icon's alpha channel there and would otherwise show a wrong/blank shape.
+- **Residual gap**: this is still a single designer-less pass, not reviewed by a human designer or brand stakeholder, and hasn't been visually verified on an actual iOS/Android home screen or notification tray (only rendered and inspected as flat PNGs in this environment). A real logo/wordmark for marketing surfaces (app store listing, website) doesn't exist yet.
 
 ## App store readiness
 
