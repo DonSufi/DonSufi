@@ -1,0 +1,64 @@
+{
+  "expo": {
+    "name": "DonSufi",
+    "slug": "donsufi",
+    "version": "1.0.0",
+    "scheme": "donsufi",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.donsufi.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "DonSufi uses your location to calculate accurate prayer times and the Qibla direction for where you are. You can also enter your location manually instead.",
+        "UIBackgroundModes": []
+      }
+    },
+    "android": {
+      "package": "com.donsufi.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0B3D2E",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "RECEIVE_BOOT_COMPLETED",
+        "SCHEDULE_EXACT_ALARM",
+        "USE_EXACT_ALARM",
+        "POST_NOTIFICATIONS",
+        "VIBRATE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-localization",
+      "expo-splash-screen",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "DonSufi uses your location to calculate accurate prayer times and the Qibla direction for where you are."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#0B3D2E"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
