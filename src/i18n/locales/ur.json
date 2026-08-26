@@ -1,0 +1,7 @@
+{
+  "common": { "appName": "ڈان صوفی", "next": "اگلا", "back": "پیچھے", "skip": "نظر انداز کریں", "done": "مکمل", "save": "محفوظ کریں", "cancel": "منسوخ کریں", "retry": "دوبارہ کوشش کریں", "loading": "لوڈ ہو رہا ہے...", "offline": "آپ آف لائن ہیں", "search": "تلاش کریں", "settings": "ترتیبات", "today": "آج", "close": "بند کریں" },
+  "nav": { "home": "ہوم", "prayerTimes": "اوقاتِ نماز", "quran": "قرآن", "qibla": "قبلہ", "more": "مزید" },
+  "more": { "ramadan": "رمضان", "dua": "دعائیں", "calendar": "اسلامی تقویم", "tracker": "نماز ٹریکر", "mosques": "مساجد", "settings": "ترتیبات" },
+  "home": { "nextPrayer": "اگلی نماز", "currentPrayer": "موجودہ نماز", "remaining": "باقی", "todaySchedule": "آج کی نمازیں" },
+  "prayers": { "fajr": "فجر", "sunrise": "طلوعِ آفتاب", "dhuhr": "ظہر", "asr": "عصر", "sunset": "غروبِ آفتاب", "maghrib": "مغرب", "isha": "عشاء" }
+}

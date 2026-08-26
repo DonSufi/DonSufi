@@ -1,0 +1,7 @@
+{
+  "common": { "appName": "DonSufi", "next": "Weiter", "back": "Zurück", "skip": "Überspringen", "done": "Fertig", "save": "Speichern", "cancel": "Abbrechen", "retry": "Erneut versuchen", "loading": "Wird geladen...", "offline": "Du bist offline", "search": "Suchen", "settings": "Einstellungen", "today": "Heute", "close": "Schließen" },
+  "nav": { "home": "Start", "prayerTimes": "Gebetszeiten", "quran": "Koran", "qibla": "Qibla", "more": "Mehr" },
+  "more": { "ramadan": "Ramadan", "dua": "Bittgebete", "calendar": "Islamischer Kalender", "tracker": "Gebets-Tracker", "mosques": "Moscheen", "settings": "Einstellungen" },
+  "home": { "nextPrayer": "Nächstes Gebet", "currentPrayer": "Aktuelles Gebet", "remaining": "verbleibend", "todaySchedule": "Heutige Gebete" },
+  "prayers": { "fajr": "Fajr", "sunrise": "Sonnenaufgang", "dhuhr": "Dhuhr", "asr": "Asr", "sunset": "Sonnenuntergang", "maghrib": "Maghrib", "isha": "Isha" }
+}

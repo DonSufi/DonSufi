@@ -1,0 +1,79 @@
+{
+  "common": {
+    "appName": "DonSufi",
+    "next": "Next",
+    "back": "Back",
+    "skip": "Skip",
+    "done": "Done",
+    "save": "Save",
+    "cancel": "Cancel",
+    "retry": "Try again",
+    "loading": "Loading...",
+    "offline": "You're offline",
+    "search": "Search",
+    "settings": "Settings",
+    "today": "Today",
+    "close": "Close"
+  },
+  "nav": {
+    "home": "Home",
+    "prayerTimes": "Prayer Times",
+    "quran": "Qur'an",
+    "qibla": "Qibla",
+    "more": "More"
+  },
+  "more": {
+    "ramadan": "Ramadan",
+    "dua": "Du'a & Adhkar",
+    "calendar": "Islamic Calendar",
+    "tracker": "Prayer Tracker",
+    "mosques": "Mosques",
+    "settings": "Settings"
+  },
+  "home": {
+    "nextPrayer": "Next Prayer",
+    "currentPrayer": "Current Prayer",
+    "remaining": "remaining",
+    "todaySchedule": "Today's Prayers"
+  },
+  "prayers": {
+    "fajr": "Fajr",
+    "sunrise": "Sunrise",
+    "dhuhr": "Dhuhr",
+    "asr": "Asr",
+    "sunset": "Sunset",
+    "maghrib": "Maghrib",
+    "isha": "Isha"
+  },
+  "onboarding": {
+    "welcomeTitle": "Welcome to DonSufi",
+    "welcomeBody": "Accurate prayer times, respectful reminders, and the essentials of daily worship -- private by design and built to work offline.",
+    "languageTitle": "Choose your language",
+    "locationTitle": "Where are you?",
+    "locationBody": "We use this only to calculate accurate prayer times and the Qibla direction. You can also set it manually.",
+    "useGps": "Use my current location",
+    "enterManually": "Enter location manually",
+    "methodTitle": "Calculation method",
+    "madhabTitle": "Madhhab (Asr calculation)",
+    "notificationsTitle": "Prayer notifications",
+    "notificationsBody": "Choose how you'd like to be reminded for each prayer. You can change this anytime in Settings.",
+    "privacyTitle": "Your privacy",
+    "privacyBody": "Your location and prayer history stay on this device. Nothing is sold, nothing is tracked for advertising. See the full privacy policy in Settings.",
+    "getStarted": "Get started"
+  },
+  "qibla": {
+    "title": "Qibla Direction",
+    "calibrate": "Move your phone in a figure-8 to calibrate the compass.",
+    "lowAccuracy": "Compass accuracy is low right now.",
+    "noSensor": "This device doesn't have a compass sensor. Showing a fixed bearing instead.",
+    "distance": "Distance to the Kaaba"
+  },
+  "settings": {
+    "prayer": "Prayer Settings",
+    "notifications": "Notification Settings",
+    "appearance": "Appearance",
+    "language": "Language",
+    "accessibility": "Accessibility",
+    "about": "About & Privacy"
+  }
+}

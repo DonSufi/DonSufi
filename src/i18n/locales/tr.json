@@ -1,0 +1,7 @@
+{
+  "common": { "appName": "DonSufi", "next": "İleri", "back": "Geri", "skip": "Atla", "done": "Bitti", "save": "Kaydet", "cancel": "İptal", "retry": "Tekrar dene", "loading": "Yükleniyor...", "offline": "Çevrimdışısınız", "search": "Ara", "settings": "Ayarlar", "today": "Bugün", "close": "Kapat" },
+  "nav": { "home": "Ana Sayfa", "prayerTimes": "Namaz Vakitleri", "quran": "Kur'an", "qibla": "Kıble", "more": "Diğer" },
+  "more": { "ramadan": "Ramazan", "dua": "Dualar", "calendar": "Hicri Takvim", "tracker": "Namaz Takibi", "mosques": "Camiler", "settings": "Ayarlar" },
+  "home": { "nextPrayer": "Sıradaki Namaz", "currentPrayer": "Şu Anki Vakit", "remaining": "kaldı", "todaySchedule": "Bugünkü Vakitler" },
+  "prayers": { "fajr": "İmsak", "sunrise": "Güneş", "dhuhr": "Öğle", "asr": "İkindi", "sunset": "Gün Batımı", "maghrib": "Akşam", "isha": "Yatsı" }
+}

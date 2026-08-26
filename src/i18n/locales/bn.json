@@ -1,0 +1,7 @@
+{
+  "common": { "appName": "ডনসুফি", "next": "পরবর্তী", "back": "পেছনে", "skip": "বাদ দিন", "done": "সম্পন্ন", "save": "সংরক্ষণ করুন", "cancel": "বাতিল", "retry": "আবার চেষ্টা করুন", "loading": "লোড হচ্ছে...", "offline": "আপনি অফলাইনে আছেন", "search": "খুঁজুন", "settings": "সেটিংস", "today": "আজ", "close": "বন্ধ করুন" },
+  "nav": { "home": "হোম", "prayerTimes": "নামাজের সময়", "quran": "কুরআন", "qibla": "কিবলা", "more": "আরও" },
+  "more": { "ramadan": "রমজান", "dua": "দোয়া ও যিকর", "calendar": "ইসলামি ক্যালেন্ডার", "tracker": "নামাজ ট্র্যাকার", "mosques": "মসজিদ", "settings": "সেটিংস" },
+  "home": { "nextPrayer": "পরবর্তী নামাজ", "currentPrayer": "বর্তমান নামাজ", "remaining": "বাকি", "todaySchedule": "আজকের নামাজের সময়সূচি" },
+  "prayers": { "fajr": "ফজর", "sunrise": "সূর্যোদয়", "dhuhr": "যোহর", "asr": "আসর", "sunset": "সূর্যাস্ত", "maghrib": "মাগরিব", "isha": "ইশা" }
+}

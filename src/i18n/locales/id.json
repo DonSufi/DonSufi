@@ -1,0 +1,7 @@
+{
+  "common": { "appName": "DonSufi", "next": "Lanjut", "back": "Kembali", "skip": "Lewati", "done": "Selesai", "save": "Simpan", "cancel": "Batal", "retry": "Coba lagi", "loading": "Memuat...", "offline": "Anda sedang offline", "search": "Cari", "settings": "Pengaturan", "today": "Hari ini", "close": "Tutup" },
+  "nav": { "home": "Beranda", "prayerTimes": "Waktu Sholat", "quran": "Al-Qur'an", "qibla": "Kiblat", "more": "Lainnya" },
+  "more": { "ramadan": "Ramadan", "dua": "Doa & Dzikir", "calendar": "Kalender Hijriah", "tracker": "Pelacak Sholat", "mosques": "Masjid", "settings": "Pengaturan" },
+  "home": { "nextPrayer": "Sholat Berikutnya", "currentPrayer": "Waktu Sholat Saat Ini", "remaining": "tersisa", "todaySchedule": "Jadwal Sholat Hari Ini" },
+  "prayers": { "fajr": "Subuh", "sunrise": "Terbit", "dhuhr": "Dzuhur", "asr": "Ashar", "sunset": "Matahari Terbenam", "maghrib": "Maghrib", "isha": "Isya" }
+}
