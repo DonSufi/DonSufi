@@ -30,7 +30,7 @@ Self-audit performed before declaring this build complete, as required by the pr
 
 ✅ Respects iOS's pending-notification ceiling via a capped, soonest-first budget.
 
-🟡 No background refresh task for the multi-day rolling window if the app stays unopened for several days (see `docs/LIMITATIONS.md`) — the app schedules a 4-day window on every foreground/settings-change, but there's no periodic background job extending that window automatically.
+✅ A background task (`expo-background-task`/`expo-task-manager`, ~12-hour cadence) now extends the multi-day rolling window even if the app stays unopened for several days, re-running the same tested `rescheduleAdhanNotifications` path from persisted storage. 🟡 Actual OS-level firing cadence is unverified on real hardware — both platforms treat the interval as an inexact minimum, and Android OEM battery optimization in particular is known to be unpredictable (see `docs/LIMITATIONS.md`); the in-app foreground resync remains the primary, always-reliable mechanism.
 
 ⛔ Not verified on a real device that OS-level notification delivery, sound, and vibration actually fire as scheduled — this requires physical hardware this environment doesn't have.
 
@@ -114,4 +114,4 @@ Self-audit performed before declaring this build complete, as required by the pr
 
 ---
 
-**Bottom line**: the app is a real, working, thoroughly domain-tested implementation — not a mockup — with every gap that remains explicitly named, reasoned about, and given a concrete path to closing it, rather than silently faked or left as an unmarked TODO. The highest-priority next steps, in order, are: (1) real iOS/Android device testing, (2) scholarly review of the du'a content, (3) a Google Places API key for the mosque finder, (4) a background task for multi-day notification scheduling, (5) professional translation review for the nine partial languages.
+**Bottom line**: the app is a real, working, thoroughly domain-tested implementation — not a mockup — with every gap that remains explicitly named, reasoned about, and given a concrete path to closing it, rather than silently faked or left as an unmarked TODO. The highest-priority next steps, in order, are: (1) real iOS/Android device testing (including verifying the background task's actual firing cadence), (2) scholarly review of the du'a content, (3) a Google Places API key for the mosque finder, (4) professional translation review for the nine partial languages.

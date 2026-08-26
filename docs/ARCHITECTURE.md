@@ -43,6 +43,7 @@ The domain layer is intentionally the only place that imports `adhan`, does astr
    - runs it through `planNotifications` (pure, tested) to get a capped, deterministic list of notifications with stable ids,
    - diffs that against what's currently scheduled (`diffNotificationPlans`, pure, tested) and only cancels/creates what actually changed.
 4. Nothing here ever assumes a previously scheduled notification is still valid — every reschedule re-derives from scratch, so DST transitions, timezone changes, method/offset edits, and location changes all self-correct on the next app foreground or settings change.
+5. Because step 4 only fires on a foreground/settings-change, `src/domain/notifications/backgroundTask.ts` registers an `expo-background-task` (~12-hour minimum interval) that calls the same `rescheduleAdhanNotifications` from persisted storage, so the rolling window keeps advancing even if the app isn't opened for a few days. The task definition lives at module scope (required by `expo-task-manager`) and is loaded as a side effect of importing it from `AppStateProvider`; registration itself is idempotent and deliberately swallows errors so an OS/device that refuses background execution never affects app startup.
 
 ## Design system
 

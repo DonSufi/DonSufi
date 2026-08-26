@@ -4,6 +4,7 @@ import { AppLocation } from '../domain/location/types';
 import { NotificationSettings } from '../domain/notifications/types';
 import { PrayerCalculationSettings } from '../domain/prayerTimes/types';
 import { rescheduleAdhanNotifications } from '../domain/notifications/scheduler';
+import { registerAdhanBackgroundTask } from '../domain/notifications/backgroundTask';
 import { loadActiveLocation, saveActiveLocation } from '../storage/locationsStore';
 import {
   AccessibilitySettings,
@@ -85,6 +86,13 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
         setState((s) => ({ ...s, isLoading: false }));
       }
     })();
+  }, []);
+
+  useEffect(() => {
+    // Fire-and-forget: registers the periodic background refresh described
+    // in backgroundTask.ts. Safe to call on every launch (idempotent) and
+    // never blocks startup if background execution isn't available.
+    registerAdhanBackgroundTask();
   }, []);
 
   // Whenever the ingredients that affect notification timing change, resync
