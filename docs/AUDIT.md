@@ -8,7 +8,7 @@ Self-audit performed before declaring this build complete, as required by the pr
 
 ✅ TypeScript compiles with zero errors (`npm run typecheck`) across the entire app and domain layer.
 
-✅ 54 unit tests pass, covering the calculation engine, Hijri calendar, Qibla, notification planner, and prayer tracker (`npm test`).
+✅ 61 unit tests pass, covering the calculation engine, Hijri calendar, Qibla, notification planner, prayer tracker, and DST transitions (`npm test`, run under `TZ=America/New_York` specifically to exercise real spring-forward/fall-back boundaries rather than a DST-free host default).
 
 🟡 No component-level UI tests (toolchain issue in this environment — see `docs/LIMITATIONS.md`). Mitigated by a manual end-to-end smoke test (onboarding → Home → other tabs) via a headless browser against a web export, which exercises the same React component tree and caught two real bugs before they could reach a device.
 

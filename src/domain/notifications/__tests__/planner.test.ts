@@ -5,26 +5,44 @@ import { defaultNotificationSettings } from '../types';
 
 const LONDON = { latitude: 51.5074, longitude: -0.1278 };
 
+/**
+ * `new Date(2026, 2, 1, 0, 0, 0)` means "local midnight" -- an absolute
+ * instant that depends on the test runner's host timezone. Under UTC (or
+ * London's own GMT-in-March offset) that instant safely precedes every
+ * prayer that day, but under e.g. US Eastern (UTC-5 in March) local
+ * midnight is 05:00 UTC, which can already be *after* London's Fajr --
+ * a test that "passes by accident" under one timezone and fails under
+ * another. This file therefore separates two different concerns that a
+ * single Date used to conflate: which local calendar day to compute a
+ * schedule for (`dayStart`, whose absolute instant doesn't matter -- only
+ * its local Y/M/D does, per computeDailyPrayerTimes's anchor logic) versus
+ * what "now" should be for a given assertion (always derived from the
+ * resulting schedule's own instants, never assumed).
+ */
+const dayStart = new Date(2026, 2, 1, 0, 0, 0);
+
+function safelyBeforeFajr(days: ReturnType<typeof computeSchedule>): Date {
+  return new Date(days[0].fajr.getTime() - 60 * 60 * 1000);
+}
+
 describe('planNotifications', () => {
   it('returns nothing when the master switch is off', () => {
-    const days = computeSchedule(LONDON, new Date(2026, 2, 1), 3, DEFAULT_PRAYER_SETTINGS);
+    const days = computeSchedule(LONDON, dayStart, 3, DEFAULT_PRAYER_SETTINGS);
     const settings = defaultNotificationSettings();
     settings.masterEnabled = false;
-    expect(planNotifications(days, settings, new Date(2026, 2, 1))).toHaveLength(0);
+    expect(planNotifications(days, settings, safelyBeforeFajr(days))).toHaveLength(0);
   });
 
   it('schedules only the 5 obligatory prayers per day when reminders are off', () => {
-    const start = new Date(2026, 2, 1, 0, 0, 0);
-    const days = computeSchedule(LONDON, start, 2, DEFAULT_PRAYER_SETTINGS);
+    const days = computeSchedule(LONDON, dayStart, 2, DEFAULT_PRAYER_SETTINGS);
     const settings = defaultNotificationSettings();
-    const plan = planNotifications(days, settings, start);
+    const plan = planNotifications(days, settings, safelyBeforeFajr(days));
     expect(plan).toHaveLength(10); // 5 prayers x 2 days
     expect(plan.every((n) => n.kind === 'main')).toBe(true);
   });
 
   it('skips prayers that have already passed "now"', () => {
-    const start = new Date(2026, 2, 1, 0, 0, 0);
-    const days = computeSchedule(LONDON, start, 1, DEFAULT_PRAYER_SETTINGS);
+    const days = computeSchedule(LONDON, dayStart, 1, DEFAULT_PRAYER_SETTINGS);
     const settings = defaultNotificationSettings();
     // "now" set to just after dhuhr: fajr and dhuhr should be excluded
     const dhuhr = days[0].dhuhr;
@@ -36,21 +54,19 @@ describe('planNotifications', () => {
   });
 
   it('respects a disabled individual prayer', () => {
-    const start = new Date(2026, 2, 1, 0, 0, 0);
-    const days = computeSchedule(LONDON, start, 1, DEFAULT_PRAYER_SETTINGS);
+    const days = computeSchedule(LONDON, dayStart, 1, DEFAULT_PRAYER_SETTINGS);
     const settings = defaultNotificationSettings();
     settings.perPrayer.fajr.enabled = false;
-    const plan = planNotifications(days, settings, start);
+    const plan = planNotifications(days, settings, safelyBeforeFajr(days));
     expect(plan.some((n) => n.prayer === 'fajr')).toBe(false);
   });
 
   it('adds pre- and post-reminders as separate entries when configured', () => {
-    const start = new Date(2026, 2, 1, 0, 0, 0);
-    const days = computeSchedule(LONDON, start, 1, DEFAULT_PRAYER_SETTINGS);
+    const days = computeSchedule(LONDON, dayStart, 1, DEFAULT_PRAYER_SETTINGS);
     const settings = defaultNotificationSettings();
     settings.perPrayer.maghrib.preReminderMinutes = 10;
     settings.perPrayer.maghrib.postReminderMinutes = 15;
-    const plan = planNotifications(days, settings, start);
+    const plan = planNotifications(days, settings, safelyBeforeFajr(days));
     const maghribEntries = plan.filter((n) => n.prayer === 'maghrib');
     expect(maghribEntries.map((n) => n.kind).sort()).toEqual(['main', 'post', 'pre']);
     const pre = maghribEntries.find((n) => n.kind === 'pre')!;
@@ -59,29 +75,27 @@ describe('planNotifications', () => {
   });
 
   it('never exceeds the OS pending-notification budget, keeping the soonest ones', () => {
-    const start = new Date(2026, 2, 1, 0, 0, 0);
-    const days = computeSchedule(LONDON, start, 30, DEFAULT_PRAYER_SETTINGS); // 150 raw entries
+    const days = computeSchedule(LONDON, dayStart, 30, DEFAULT_PRAYER_SETTINGS); // 150 raw entries
     const settings = defaultNotificationSettings();
-    const plan = planNotifications(days, settings, start);
+    const plan = planNotifications(days, settings, safelyBeforeFajr(days));
     expect(plan.length).toBeLessThanOrEqual(MAX_PENDING_NOTIFICATIONS);
     expect(plan[0].fireAt.getTime()).toBeLessThan(plan[plan.length - 1].fireAt.getTime());
   });
 
   it('produces notifications sorted in chronological order', () => {
-    const start = new Date(2026, 2, 1, 0, 0, 0);
-    const days = computeSchedule(LONDON, start, 3, DEFAULT_PRAYER_SETTINGS);
-    const plan = planNotifications(days, defaultNotificationSettings(), start);
+    const days = computeSchedule(LONDON, dayStart, 3, DEFAULT_PRAYER_SETTINGS);
+    const plan = planNotifications(days, defaultNotificationSettings(), safelyBeforeFajr(days));
     for (let i = 1; i < plan.length; i++) {
       expect(plan[i].fireAt.getTime()).toBeGreaterThanOrEqual(plan[i - 1].fireAt.getTime());
     }
   });
 
   it('produces stable, deterministic ids so rescheduling does not duplicate notifications', () => {
-    const start = new Date(2026, 2, 1, 0, 0, 0);
-    const days = computeSchedule(LONDON, start, 1, DEFAULT_PRAYER_SETTINGS);
+    const days = computeSchedule(LONDON, dayStart, 1, DEFAULT_PRAYER_SETTINGS);
     const settings = defaultNotificationSettings();
-    const planA = planNotifications(days, settings, start);
-    const planB = planNotifications(days, settings, start);
+    const now = safelyBeforeFajr(days);
+    const planA = planNotifications(days, settings, now);
+    const planB = planNotifications(days, settings, now);
     expect(planA.map((n) => n.id)).toEqual(planB.map((n) => n.id));
     expect(new Set(planA.map((n) => n.id)).size).toBe(planA.length);
   });
