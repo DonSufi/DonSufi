@@ -1,0 +1,82 @@
+{
+  "common": { "appName": "Salla", "next": "İleri", "back": "Geri", "skip": "Atla", "done": "Bitti", "save": "Kaydet", "cancel": "İptal", "retry": "Tekrar dene", "loading": "Yükleniyor...", "offline": "Çevrimdışısınız", "search": "Ara", "settings": "Ayarlar", "today": "Bugün", "close": "Kapat", "partialTranslation": "kısmi çeviri", "setLocationTitle": "Konumunuzu ayarlayın", "chooseLocation": "Konum seç", "on": "Açık", "off": "Kapalı", "notSet": "Ayarlanmadı", "hide": "Gizle", "saved": "Kaydedildi" },
+  "nav": { "home": "Ana Sayfa", "prayerTimes": "Namaz Vakitleri", "quran": "Kur'an", "qibla": "Kıble", "more": "Diğer" },
+  "more": { "ramadan": "Ramazan", "dua": "Dualar", "calendar": "Hicri Takvim", "tracker": "Namaz Takibi", "mosques": "Camiler", "settings": "Ayarlar" },
+  "home": { "nextPrayer": "Sıradaki Namaz", "currentPrayer": "Şu Anki Vakit", "remaining": "kaldı", "todaySchedule": "Bugünkü Vakitler", "needsLocationMessage": "Salla'nın doğru namaz vakitlerini hesaplayabilmesi için bir konuma ihtiyacı var.", "extremeLatitudeTitle": "Aşırı enlem", "extremeLatitudeMessage": "Bu konumda güneş bugün her zamanki gibi doğmuyor veya batmıyor, bu nedenle standart namaz vakti hesaplaması geçerli değil. Namaz Ayarları'nda bir yüksek enlem düzeltme kuralı deneyin veya normal gündüz ve gece olan en yakın şehri referans alın.", "openPrayerSettings": "Namaz ayarlarını aç" },
+  "prayers": { "fajr": "İmsak", "sunrise": "Güneş", "dhuhr": "Öğle", "asr": "İkindi", "sunset": "Gün Batımı", "maghrib": "Akşam", "isha": "Yatsı" },
+  "onboarding": {
+    "welcomeTitle": "Salla'ya Hoş Geldiniz",
+    "welcomeBody": "Doğru namaz vakitleri, saygılı hatırlatmalar ve günlük ibadetin temelleri -- tasarım gereği gizli ve çevrimdışı çalışacak şekilde geliştirildi.",
+    "languageTitle": "Dilinizi seçin",
+    "locationTitle": "Neredesiniz?",
+    "locationBody": "Bunu yalnızca doğru namaz vakitlerini ve kıble yönünü hesaplamak için kullanıyoruz. Ayrıca manuel olarak da ayarlayabilirsiniz.",
+    "useGps": "Mevcut konumumu kullan",
+    "enterManually": "Konumu manuel olarak gir",
+    "methodTitle": "Hesaplama yöntemi",
+    "madhabTitle": "Mezhep (İkindi hesaplaması)",
+    "madhabShafiLabel": "Standart (Şafii, Maliki, Hanbeli)",
+    "madhabShafiDescription": "İkindi, gölge nesne uzunluğuna eşit olduğunda başlar",
+    "madhabHanafiLabel": "Hanefi",
+    "madhabHanafiDescription": "İkindi, gölge nesne uzunluğunun iki katı olduğunda başlar",
+    "notificationsTitle": "Namaz bildirimleri",
+    "notificationsBody": "Her namaz için nasıl hatırlatılmak istediğinizi seçin. Bunu istediğiniz zaman Ayarlar'dan değiştirebilirsiniz.",
+    "enableNotifications": "Ezan bildirimlerini etkinleştir",
+    "privacyTitle": "Gizliliğiniz",
+    "privacyBody": "Konumunuz ve namaz geçmişiniz bu cihazda kalır. Hiçbir şey satılmaz, reklam amacıyla takip edilmez. Tam gizlilik politikasına Ayarlar'dan ulaşabilirsiniz.",
+    "getStarted": "Başlayın",
+    "selectedLocation": "Seçildi: {{label}}"
+  },
+  "qibla": {
+    "title": "Kıble Yönü",
+    "calibrate": "Pusulayı kalibre etmek için telefonunuzu 8 şeklinde hareket ettirin.",
+    "lowAccuracy": "Pusula doğruluğu şu anda düşük.",
+    "noSensor": "Bu cihazda pusula sensörü yok. Bunun yerine sabit bir yön gösteriliyor.",
+    "distance": "Kabe'ye olan mesafe",
+    "needsLocationMessage": "Kıble yönü konumunuza göre hesaplanır.",
+    "permissionNotGranted": "Pusula izni verilmedi",
+    "pointPhoneMessage": "Kıbleye yönelmek için telefonunuzun üst kenarını gerçek kuzeyden saat yönünde {{bearing}}° çevirin.",
+    "bearingNote": "Gerçek kuzeyden yön: {{bearing}}°. Pusula okumaları metal veya elektronik cihazların yakınında sapabilir -- bu bir yardımcıdır, dikkatli değerlendirmenin yerini tutmaz."
+  },
+  "settings": {
+    "prayer": "Namaz Ayarları",
+    "notifications": "Bildirim Ayarları",
+    "appearance": "Görünüm",
+    "language": "Dil",
+    "accessibility": "Erişilebilirlik",
+    "about": "Hakkında ve Gizlilik",
+    "restartNeededTitle": "Yeniden başlatma gerekli",
+    "restartNeededMessage": "Soldan sağa ve sağdan sola diller arasında geçiş yapmak, düzen değişikliğini tamamlamak için uygulamanın yeniden başlatılmasını gerektirir.",
+    "translationStatusNote": "İngilizce ve Arapça tam çeviri içeriğine sahiptir. Diğer diller şu anda katılım, gezinme ve temel ekranları kapsamaktadır -- bazı ikincil ekranlar tam olarak çevrilene kadar İngilizce görünmeye devam edebilir."
+  },
+  "locationPicker": {
+    "useGps": "Mevcut konumumu kullan",
+    "orSearchCity": "veya bir şehir arayın",
+    "searchPlaceholder": "örn. Lagos, Nijerya",
+    "cityGeocodingOffline": "Şehir araması internet bağlantısı gerektirir.",
+    "enterManually": "Koordinatları manuel olarak girin",
+    "hideManualEntry": "Manuel girişi gizle",
+    "latitudePlaceholder": "Enlem",
+    "longitudePlaceholder": "Boylam",
+    "invalidCoordinates": "Geçerli bir enlem (-90 ile 90 arası) ve boylam (-180 ile 180 arası) girin.",
+    "useTheseCoordinates": "Bu koordinatları kullan"
+  },
+  "prayerSettings": {
+    "locationLabel": "Konum",
+    "changeLocation": "Konumu değiştir",
+    "calculationMethodLabel": "Hesaplama yöntemi",
+    "changeMethod": "Yöntemi değiştir",
+    "madhabAsrLabel": "Mezhep (İkindi)",
+    "madhabDisplay": "Mezhep: {{madhab}}",
+    "highLatitudeRuleLabel": "Yüksek enlem kuralı",
+    "highLatitudeRuleDisplay": "Yüksek enlem kuralı: {{rule}}",
+    "highLatitudeNote": "Yalnızca standart alacakaranlık açısı hesaplamasının bozulduğu enlemlerde önemlidir (yaklaşık olarak Kuzey/Güney Kutup dairelerinin üzerinde, mevsimsel olarak).",
+    "manualAdjustmentsLabel": "Manuel ayarlamalar (dakika)",
+    "adjustSettings": "Ayarları düzenle",
+    "highLatOptions": {
+      "recommended": "Önerilen (otomatik)",
+      "middleOfNight": "Gecenin Ortası",
+      "seventhOfNight": "Gecenin Yedide Biri",
+      "twilightAngle": "Alacakaranlık Açısı"
+    }
+  }
+}

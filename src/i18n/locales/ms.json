@@ -1,0 +1,82 @@
+{
+  "common": { "appName": "Salla", "next": "Seterusnya", "back": "Kembali", "skip": "Langkau", "done": "Selesai", "save": "Simpan", "cancel": "Batal", "retry": "Cuba lagi", "loading": "Memuatkan...", "offline": "Anda sedang luar talian", "search": "Cari", "settings": "Tetapan", "today": "Hari ini", "close": "Tutup", "partialTranslation": "terjemahan separa", "setLocationTitle": "Tetapkan lokasi anda", "chooseLocation": "Pilih lokasi", "on": "Hidup", "off": "Mati", "notSet": "Belum ditetapkan", "hide": "Sembunyikan", "saved": "Disimpan" },
+  "nav": { "home": "Utama", "prayerTimes": "Waktu Solat", "quran": "Al-Quran", "qibla": "Kiblat", "more": "Lagi" },
+  "more": { "ramadan": "Ramadan", "dua": "Doa & Zikir", "calendar": "Kalendar Hijrah", "tracker": "Penjejak Solat", "mosques": "Masjid", "settings": "Tetapan" },
+  "home": { "nextPrayer": "Solat Seterusnya", "currentPrayer": "Waktu Solat Semasa", "remaining": "berbaki", "todaySchedule": "Waktu Solat Hari Ini", "needsLocationMessage": "Salla memerlukan lokasi untuk mengira waktu solat yang tepat.", "extremeLatitudeTitle": "Latitud melampau", "extremeLatitudeMessage": "Di lokasi ini, matahari tidak terbit atau terbenam dengan cara biasa hari ini, jadi pengiraan waktu solat standard tidak terpakai. Cuba peraturan pelarasan latitud tinggi dalam Tetapan Solat, atau rujuk bandar terdekat dengan siang dan malam biasa sebagai panduan.", "openPrayerSettings": "Buka tetapan solat" },
+  "prayers": { "fajr": "Subuh", "sunrise": "Syuruk", "dhuhr": "Zohor", "asr": "Asar", "sunset": "Matahari Terbenam", "maghrib": "Maghrib", "isha": "Isyak" },
+  "onboarding": {
+    "welcomeTitle": "Selamat Datang ke Salla",
+    "welcomeBody": "Waktu solat yang tepat, peringatan yang penuh hormat, dan perkara asas ibadah harian -- peribadi mengikut reka bentuk dan dibina untuk berfungsi secara luar talian.",
+    "languageTitle": "Pilih bahasa anda",
+    "locationTitle": "Di manakah anda?",
+    "locationBody": "Kami menggunakan ini hanya untuk mengira waktu solat yang tepat dan arah kiblat. Anda juga boleh menetapkannya secara manual.",
+    "useGps": "Gunakan lokasi semasa saya",
+    "enterManually": "Masukkan lokasi secara manual",
+    "methodTitle": "Kaedah pengiraan",
+    "madhabTitle": "Mazhab (pengiraan Asar)",
+    "madhabShafiLabel": "Standard (Syafie, Maliki, Hanbali)",
+    "madhabShafiDescription": "Asar bermula apabila bayang-bayang menyamai panjang objek",
+    "madhabHanafiLabel": "Hanafi",
+    "madhabHanafiDescription": "Asar bermula apabila bayang-bayang dua kali ganda panjang objek",
+    "notificationsTitle": "Pemberitahuan solat",
+    "notificationsBody": "Pilih bagaimana anda mahu diingatkan untuk setiap solat. Anda boleh menukarnya bila-bila masa dalam Tetapan.",
+    "enableNotifications": "Dayakan pemberitahuan azan",
+    "privacyTitle": "Privasi anda",
+    "privacyBody": "Lokasi dan sejarah solat anda kekal pada peranti ini. Tiada apa yang dijual, tiada apa yang dijejaki untuk pengiklanan. Lihat dasar privasi penuh dalam Tetapan.",
+    "getStarted": "Mula",
+    "selectedLocation": "Dipilih: {{label}}"
+  },
+  "qibla": {
+    "title": "Arah Kiblat",
+    "calibrate": "Gerakkan telefon anda dalam bentuk angka 8 untuk menentukur kompas.",
+    "lowAccuracy": "Ketepatan kompas rendah pada masa ini.",
+    "noSensor": "Peranti ini tidak mempunyai penderia kompas. Memaparkan arah tetap sebagai gantinya.",
+    "distance": "Jarak ke Kaabah",
+    "needsLocationMessage": "Arah kiblat dikira berdasarkan lokasi anda.",
+    "permissionNotGranted": "Kebenaran kompas tidak diberikan",
+    "pointPhoneMessage": "Halakan bahagian atas telefon anda {{bearing}}° mengikut arah jam dari utara sebenar untuk menghadap kiblat.",
+    "bearingNote": "Arah dari utara sebenar: {{bearing}}°. Bacaan kompas boleh terpesong berhampiran logam atau peranti elektronik -- ini adalah bantuan, bukan pengganti pertimbangan yang teliti."
+  },
+  "settings": {
+    "prayer": "Tetapan Solat",
+    "notifications": "Tetapan Pemberitahuan",
+    "appearance": "Rupa",
+    "language": "Bahasa",
+    "accessibility": "Kebolehcapaian",
+    "about": "Perihal & Privasi",
+    "restartNeededTitle": "Mulakan semula diperlukan",
+    "restartNeededMessage": "Menukar antara bahasa kiri-ke-kanan dan kanan-ke-kiri memerlukan aplikasi dimulakan semula untuk melengkapkan pencerminan reka letak.",
+    "translationStatusNote": "Bahasa Inggeris dan Arab mempunyai kandungan terjemahan lengkap. Bahasa lain kini merangkumi onboarding, navigasi dan skrin teras -- sesetengah skrin sekunder mungkin masih kelihatan dalam bahasa Inggeris sehingga diterjemahkan sepenuhnya."
+  },
+  "locationPicker": {
+    "useGps": "Gunakan lokasi semasa saya",
+    "orSearchCity": "atau cari bandar",
+    "searchPlaceholder": "cth. Lagos, Nigeria",
+    "cityGeocodingOffline": "Carian bandar memerlukan sambungan internet.",
+    "enterManually": "Masukkan koordinat secara manual",
+    "hideManualEntry": "Sembunyikan kemasukan manual",
+    "latitudePlaceholder": "Latitud",
+    "longitudePlaceholder": "Longitud",
+    "invalidCoordinates": "Masukkan latitud (-90 hingga 90) dan longitud (-180 hingga 180) yang sah.",
+    "useTheseCoordinates": "Gunakan koordinat ini"
+  },
+  "prayerSettings": {
+    "locationLabel": "Lokasi",
+    "changeLocation": "Tukar lokasi",
+    "calculationMethodLabel": "Kaedah pengiraan",
+    "changeMethod": "Tukar kaedah",
+    "madhabAsrLabel": "Mazhab (Asar)",
+    "madhabDisplay": "Mazhab: {{madhab}}",
+    "highLatitudeRuleLabel": "Peraturan latitud tinggi",
+    "highLatitudeRuleDisplay": "Peraturan latitud tinggi: {{rule}}",
+    "highLatitudeNote": "Hanya penting pada latitud di mana pengiraan sudut syafak standard gagal (kira-kira di atas bulatan kutub Artik/Antartika, mengikut musim).",
+    "manualAdjustmentsLabel": "Pelarasan manual (minit)",
+    "adjustSettings": "Laraskan tetapan",
+    "highLatOptions": {
+      "recommended": "Disyorkan (automatik)",
+      "middleOfNight": "Pertengahan Malam",
+      "seventhOfNight": "Satu Pertujuh Malam",
+      "twilightAngle": "Sudut Syafak"
+    }
+  }
+}

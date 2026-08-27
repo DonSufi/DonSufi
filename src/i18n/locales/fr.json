@@ -1,0 +1,91 @@
+{
+  "common": { "appName": "Salla", "next": "Suivant", "back": "Retour", "skip": "Passer", "done": "Terminé", "save": "Enregistrer", "cancel": "Annuler", "retry": "Réessayer", "loading": "Chargement...", "offline": "Vous êtes hors ligne", "search": "Rechercher", "settings": "Paramètres", "today": "Aujourd'hui", "close": "Fermer", "partialTranslation": "traduction partielle", "setLocationTitle": "Définir votre position", "chooseLocation": "Choisir la position", "on": "Activé", "off": "Désactivé", "notSet": "Non défini", "hide": "Masquer", "saved": "Enregistré" },
+  "nav": { "home": "Accueil", "prayerTimes": "Horaires", "quran": "Coran", "qibla": "Qibla", "more": "Plus" },
+  "more": { "ramadan": "Ramadan", "dua": "Invocations", "calendar": "Calendrier islamique", "tracker": "Suivi des prières", "mosques": "Mosquées", "settings": "Paramètres" },
+  "home": {
+    "nextPrayer": "Prochaine prière",
+    "currentPrayer": "Prière actuelle",
+    "remaining": "restant",
+    "todaySchedule": "Prières du jour",
+    "needsLocationMessage": "Salla a besoin d'une position pour calculer des horaires de prière précis.",
+    "extremeLatitudeTitle": "Latitude extrême",
+    "extremeLatitudeMessage": "À cet endroit, le soleil ne se lève ni ne se couche de la manière habituelle aujourd'hui, donc le calcul standard des horaires de prière ne s'applique pas. Essayez une règle d'ajustement pour hautes latitudes dans les Paramètres de prière, ou référez-vous à la ville la plus proche ayant un jour et une nuit normaux.",
+    "openPrayerSettings": "Ouvrir les paramètres de prière"
+  },
+  "prayers": { "fajr": "Fajr", "sunrise": "Lever du soleil", "dhuhr": "Dhuhr", "asr": "Asr", "sunset": "Coucher du soleil", "maghrib": "Maghrib", "isha": "Isha" },
+  "onboarding": {
+    "welcomeTitle": "Bienvenue sur Salla",
+    "welcomeBody": "Des horaires de prière précis, des rappels respectueux et l'essentiel de la pratique quotidienne -- privé par conception et conçu pour fonctionner hors ligne.",
+    "languageTitle": "Choisissez votre langue",
+    "locationTitle": "Où êtes-vous ?",
+    "locationBody": "Nous l'utilisons uniquement pour calculer des horaires de prière précis et la direction de la Qibla. Vous pouvez aussi le définir manuellement.",
+    "useGps": "Utiliser ma position actuelle",
+    "enterManually": "Saisir la position manuellement",
+    "methodTitle": "Méthode de calcul",
+    "madhabTitle": "Madhhab (calcul de l'Asr)",
+    "madhabShafiLabel": "Standard (chaféite, malikite, hanbalite)",
+    "madhabShafiDescription": "L'Asr commence lorsque l'ombre égale la longueur de l'objet",
+    "madhabHanafiLabel": "Hanafite",
+    "madhabHanafiDescription": "L'Asr commence lorsque l'ombre fait le double de la longueur de l'objet",
+    "notificationsTitle": "Notifications de prière",
+    "notificationsBody": "Choisissez comment vous souhaitez être rappelé pour chaque prière. Vous pouvez modifier cela à tout moment dans les Paramètres.",
+    "enableNotifications": "Activer les notifications de l'Adhan",
+    "privacyTitle": "Votre confidentialité",
+    "privacyBody": "Votre position et votre historique de prières restent sur cet appareil. Rien n'est vendu, rien n'est suivi à des fins publicitaires. Consultez la politique de confidentialité complète dans les Paramètres.",
+    "getStarted": "Commencer",
+    "selectedLocation": "Sélectionné : {{label}}"
+  },
+  "qibla": {
+    "title": "Direction de la Qibla",
+    "calibrate": "Déplacez votre téléphone en forme de 8 pour calibrer la boussole.",
+    "lowAccuracy": "La précision de la boussole est faible actuellement.",
+    "noSensor": "Cet appareil n'a pas de capteur de boussole. Affichage d'un relèvement fixe à la place.",
+    "distance": "Distance jusqu'à la Kaaba",
+    "needsLocationMessage": "La direction de la Qibla est calculée à partir de votre position.",
+    "permissionNotGranted": "Autorisation de la boussole non accordée",
+    "pointPhoneMessage": "Orientez le haut de votre téléphone à {{bearing}}° dans le sens des aiguilles d'une montre par rapport au nord réel pour faire face à la Qibla.",
+    "bearingNote": "Direction par rapport au nord réel : {{bearing}}°. Les lectures de la boussole peuvent dériver près de métaux ou d'appareils électroniques -- c'est une aide, pas un substitut à un jugement attentif."
+  },
+  "settings": {
+    "prayer": "Paramètres de prière",
+    "notifications": "Paramètres de notification",
+    "appearance": "Apparence",
+    "language": "Langue",
+    "accessibility": "Accessibilité",
+    "about": "À propos et confidentialité",
+    "restartNeededTitle": "Redémarrage nécessaire",
+    "restartNeededMessage": "Passer d'une langue de gauche à droite à une langue de droite à gauche nécessite un redémarrage de l'application pour terminer l'inversion de la mise en page.",
+    "translationStatusNote": "L'anglais et l'arabe disposent d'un contenu de traduction complet. Les autres langues couvrent actuellement l'intégration, la navigation et les écrans principaux -- certains écrans secondaires peuvent encore apparaître en anglais jusqu'à leur traduction complète."
+  },
+  "locationPicker": {
+    "useGps": "Utiliser ma position actuelle",
+    "orSearchCity": "ou rechercher une ville",
+    "searchPlaceholder": "ex. Lagos, Nigeria",
+    "cityGeocodingOffline": "La recherche de ville nécessite une connexion Internet.",
+    "enterManually": "Saisir les coordonnées manuellement",
+    "hideManualEntry": "Masquer la saisie manuelle",
+    "latitudePlaceholder": "Latitude",
+    "longitudePlaceholder": "Longitude",
+    "invalidCoordinates": "Saisissez une latitude valide (-90 à 90) et une longitude valide (-180 à 180).",
+    "useTheseCoordinates": "Utiliser ces coordonnées"
+  },
+  "prayerSettings": {
+    "locationLabel": "Position",
+    "changeLocation": "Changer de position",
+    "calculationMethodLabel": "Méthode de calcul",
+    "changeMethod": "Changer de méthode",
+    "madhabAsrLabel": "Madhhab (Asr)",
+    "madhabDisplay": "Madhhab : {{madhab}}",
+    "highLatitudeRuleLabel": "Règle des hautes latitudes",
+    "highLatitudeRuleDisplay": "Règle des hautes latitudes : {{rule}}",
+    "highLatitudeNote": "Pertinent uniquement aux latitudes où le calcul standard par angle crépusculaire échoue (à peu près au-dessus des cercles polaires arctique/antarctique, selon la saison).",
+    "manualAdjustmentsLabel": "Ajustements manuels (minutes)",
+    "adjustSettings": "Ajuster les paramètres",
+    "highLatOptions": {
+      "recommended": "Recommandé (auto)",
+      "middleOfNight": "Milieu de la nuit",
+      "seventhOfNight": "Septième de la nuit",
+      "twilightAngle": "Angle crépusculaire"
+    }
+  }
+}

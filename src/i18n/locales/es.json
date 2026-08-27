@@ -1,0 +1,82 @@
+{
+  "common": { "appName": "Salla", "next": "Siguiente", "back": "Atrás", "skip": "Omitir", "done": "Listo", "save": "Guardar", "cancel": "Cancelar", "retry": "Reintentar", "loading": "Cargando...", "offline": "Estás sin conexión", "search": "Buscar", "settings": "Ajustes", "today": "Hoy", "close": "Cerrar", "partialTranslation": "traducción parcial", "setLocationTitle": "Establece tu ubicación", "chooseLocation": "Elegir ubicación", "on": "Activado", "off": "Desactivado", "notSet": "No establecido", "hide": "Ocultar", "saved": "Guardado" },
+  "nav": { "home": "Inicio", "prayerTimes": "Horarios", "quran": "Corán", "qibla": "Qibla", "more": "Más" },
+  "more": { "ramadan": "Ramadán", "dua": "Súplicas", "calendar": "Calendario islámico", "tracker": "Seguimiento de oraciones", "mosques": "Mezquitas", "settings": "Ajustes" },
+  "home": { "nextPrayer": "Próxima oración", "currentPrayer": "Oración actual", "remaining": "restante", "todaySchedule": "Oraciones de hoy", "needsLocationMessage": "Salla necesita una ubicación para calcular horarios de oración precisos.", "extremeLatitudeTitle": "Latitud extrema", "extremeLatitudeMessage": "En esta ubicación, el sol no sale ni se pone de la manera habitual hoy, por lo que el cálculo estándar de horarios de oración no se aplica. Prueba una regla de ajuste para latitudes altas en Ajustes de oración, o consulta la ciudad más cercana con día y noche normales como referencia.", "openPrayerSettings": "Abrir ajustes de oración" },
+  "prayers": { "fajr": "Fajr", "sunrise": "Salida del sol", "dhuhr": "Dhuhr", "asr": "Asr", "sunset": "Puesta del sol", "maghrib": "Magrib", "isha": "Isha" },
+  "onboarding": {
+    "welcomeTitle": "Bienvenido a Salla",
+    "welcomeBody": "Horarios de oración precisos, recordatorios respetuosos y lo esencial de la práctica diaria -- privado por diseño y creado para funcionar sin conexión.",
+    "languageTitle": "Elige tu idioma",
+    "locationTitle": "¿Dónde estás?",
+    "locationBody": "Lo usamos solo para calcular horarios de oración precisos y la dirección de la Qibla. También puedes configurarlo manualmente.",
+    "useGps": "Usar mi ubicación actual",
+    "enterManually": "Introducir ubicación manualmente",
+    "methodTitle": "Método de cálculo",
+    "madhabTitle": "Madhhab (cálculo del Asr)",
+    "madhabShafiLabel": "Estándar (shafi'i, maliki, hanbali)",
+    "madhabShafiDescription": "El Asr comienza cuando una sombra es igual a la longitud del objeto",
+    "madhabHanafiLabel": "Hanafi",
+    "madhabHanafiDescription": "El Asr comienza cuando una sombra es el doble de la longitud del objeto",
+    "notificationsTitle": "Notificaciones de oración",
+    "notificationsBody": "Elige cómo quieres que te recordemos cada oración. Puedes cambiarlo en cualquier momento en Ajustes.",
+    "enableNotifications": "Activar notificaciones del Adhan",
+    "privacyTitle": "Tu privacidad",
+    "privacyBody": "Tu ubicación e historial de oraciones permanecen en este dispositivo. No se vende nada, no se rastrea nada con fines publicitarios. Consulta la política de privacidad completa en Ajustes.",
+    "getStarted": "Comenzar",
+    "selectedLocation": "Seleccionado: {{label}}"
+  },
+  "qibla": {
+    "title": "Dirección de la Qibla",
+    "calibrate": "Mueve tu teléfono en forma de 8 para calibrar la brújula.",
+    "lowAccuracy": "La precisión de la brújula es baja en este momento.",
+    "noSensor": "Este dispositivo no tiene sensor de brújula. Mostrando un rumbo fijo en su lugar.",
+    "distance": "Distancia a la Kaaba",
+    "needsLocationMessage": "La dirección de la Qibla se calcula a partir de tu ubicación.",
+    "permissionNotGranted": "Permiso de brújula no concedido",
+    "pointPhoneMessage": "Apunta el borde superior de tu teléfono a {{bearing}}° en el sentido de las agujas del reloj desde el norte verdadero para orientarte hacia la Qibla.",
+    "bearingNote": "Rumbo desde el norte verdadero: {{bearing}}°. Las lecturas de la brújula pueden desviarse cerca de metales o dispositivos electrónicos -- esto es una ayuda, no un sustituto de un juicio cuidadoso."
+  },
+  "settings": {
+    "prayer": "Ajustes de oración",
+    "notifications": "Ajustes de notificaciones",
+    "appearance": "Apariencia",
+    "language": "Idioma",
+    "accessibility": "Accesibilidad",
+    "about": "Acerca de y privacidad",
+    "restartNeededTitle": "Reinicio necesario",
+    "restartNeededMessage": "Cambiar entre idiomas de izquierda a derecha y de derecha a izquierda requiere reiniciar la aplicación para completar el cambio de diseño.",
+    "translationStatusNote": "El inglés y el árabe tienen contenido de traducción completo. Los demás idiomas actualmente cubren la incorporación, la navegación y las pantallas principales -- algunas pantallas secundarias pueden seguir apareciendo en inglés hasta que se traduzcan por completo."
+  },
+  "locationPicker": {
+    "useGps": "Usar mi ubicación actual",
+    "orSearchCity": "o busca una ciudad",
+    "searchPlaceholder": "p. ej. Lagos, Nigeria",
+    "cityGeocodingOffline": "La búsqueda de ciudades necesita conexión a Internet.",
+    "enterManually": "Introducir coordenadas manualmente",
+    "hideManualEntry": "Ocultar entrada manual",
+    "latitudePlaceholder": "Latitud",
+    "longitudePlaceholder": "Longitud",
+    "invalidCoordinates": "Introduce una latitud válida (-90 a 90) y una longitud válida (-180 a 180).",
+    "useTheseCoordinates": "Usar estas coordenadas"
+  },
+  "prayerSettings": {
+    "locationLabel": "Ubicación",
+    "changeLocation": "Cambiar ubicación",
+    "calculationMethodLabel": "Método de cálculo",
+    "changeMethod": "Cambiar método",
+    "madhabAsrLabel": "Madhhab (Asr)",
+    "madhabDisplay": "Madhhab: {{madhab}}",
+    "highLatitudeRuleLabel": "Regla de latitud alta",
+    "highLatitudeRuleDisplay": "Regla de latitud alta: {{rule}}",
+    "highLatitudeNote": "Solo importa en latitudes donde el cálculo estándar por ángulo crepuscular falla (aproximadamente por encima de los círculos polares ártico/antártico, según la temporada).",
+    "manualAdjustmentsLabel": "Ajustes manuales (minutos)",
+    "adjustSettings": "Ajustar configuración",
+    "highLatOptions": {
+      "recommended": "Recomendado (automático)",
+      "middleOfNight": "Medianoche",
+      "seventhOfNight": "Séptimo de la noche",
+      "twilightAngle": "Ángulo crepuscular"
+    }
+  }
+}
