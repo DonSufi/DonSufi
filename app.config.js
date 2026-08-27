@@ -82,6 +82,12 @@ module.exports = {
       // resolves to an empty string and the mosque finder shows its
       // documented "not configured" state rather than failing silently.
       googlePlacesApiKey: process.env.GOOGLE_PLACES_API_KEY ?? '',
+      // Links this app to its EAS project (donsufi/donsufi on expo.dev), so
+      // `eas build` and `eas update` know which cloud project to use. This
+      // is a public project identifier, not a secret.
+      eas: {
+        projectId: 'db598883-aaad-45eb-ab05-c1165b7553e5',
+      },
     },
   },
 };
