@@ -31,3 +31,30 @@ export function distanceToKaabaKm(from: GeoCoordinates): number {
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   return R * c;
 }
+
+/** Normalizes any angle (degrees) to the [0, 360) range. */
+export function normalizeAngle(deg: number): number {
+  return ((deg % 360) + 360) % 360;
+}
+
+/**
+ * Shortest signed angular distance from `from` to `to`, in [-180, 180).
+ * This is what makes a compass needle take the short way round instead of
+ * spinning the long way whenever the reading crosses the 0/360 seam.
+ */
+export function shortestAngleDelta(from: number, to: number): number {
+  return normalizeAngle(to - from + 180) - 180;
+}
+
+/**
+ * One step of exponential smoothing on a circular quantity (e.g. a live
+ * compass heading), moving `previous` a fraction `alpha` of the way toward
+ * `raw` along the shortest path around the circle. Raw magnetometer
+ * readings are noisy -- without this, a compass UI visibly jitters on every
+ * sample. A naive linear average would also be wrong near the 0/360 seam
+ * (e.g. averaging 359 and 1 as 180, instead of 0).
+ */
+export function smoothAngle(previous: number, raw: number, alpha: number): number {
+  const delta = shortestAngleDelta(previous, raw);
+  return normalizeAngle(previous + delta * alpha);
+}
