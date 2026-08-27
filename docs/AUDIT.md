@@ -112,7 +112,7 @@ Self-audit performed before declaring this build complete, as required by the pr
 
 ## iOS / Android compatibility
 
-🟡 Both platforms are targeted by the same Expo/React Native codebase with no platform-specific forks needed so far; `app.json` declares the relevant iOS (`NSLocationWhenInUseUsageDescription`) and Android (location, notification, boot-received, exact-alarm) permissions. Actual behavior on real iOS and Android hardware — permission dialogs, notification delivery, background behavior, OEM-specific quirks (especially Android battery-optimization killing background work) — is unverified in this environment and is the single most important thing to test before shipping (see `docs/LIMITATIONS.md`).
+🟡 Both platforms are targeted by the same Expo/React Native codebase with no platform-specific forks needed so far; `app.config.js` declares the relevant iOS (`NSLocationWhenInUseUsageDescription`) and Android (location, notification, boot-received, exact-alarm) permissions. Actual behavior on real iOS and Android hardware — permission dialogs, notification delivery, background behavior, OEM-specific quirks (especially Android battery-optimization killing background work) — is unverified in this environment and is the single most important thing to test before shipping (see `docs/LIMITATIONS.md`).
 
 ---
 

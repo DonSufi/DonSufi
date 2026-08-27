@@ -16,7 +16,7 @@ This app was built in a single sandboxed development environment with **no iOS/A
 ## Mosque finder
 
 - Needs a billable Google Places API key, which this environment cannot provision. The app never fabricates mosque data in its place — with no key configured, the Mosques screen shows an explicit "isn't configured yet" state (see `src/data/mosques/mosqueClient.ts`).
-- **To close**: obtain a Google Places API key (or switch to another licensed mosque/POI dataset), add it to `app.json`'s `extra.googlePlacesApiKey` (or better, inject via EAS secrets / `app.config.js` + environment variable so it isn't committed to source control).
+- **Closed (the wiring, not the key itself)**: `app.json` has been converted to `app.config.js`, which reads `extra.googlePlacesApiKey` from the `GOOGLE_PLACES_API_KEY` environment variable (`.env.example` documents this; a real `.env` is git-ignored). Locally, set it in a `.env` file; for EAS builds, `eas secret:create --scope project --name GOOGLE_PLACES_API_KEY --value "..."` injects it at build time. With no key set, this resolves to an empty string and the app correctly shows its "not configured" state. **Still needed**: obtain the actual key (see the step-by-step in this file's accompanying tutorial, or `docs/AUDIT.md`) — this environment has no way to create a billable Google Cloud project.
 
 ## Qur'an audio recitation
 
@@ -57,7 +57,7 @@ This app was built in a single sandboxed development environment with **no iOS/A
 
 ## App store readiness
 
-- No EAS project is configured, no Apple Developer / Google Play Console credentials exist in this environment, and no build has been submitted anywhere. `app.json` has placeholder bundle identifiers (`com.donsufi.app`) that should be confirmed as available/owned before a real submission.
+- No EAS project is configured, no Apple Developer / Google Play Console credentials exist in this environment, and no build has been submitted anywhere. `app.config.js` has placeholder bundle identifiers (`com.donsufi.app`) that should be confirmed as available/owned before a real submission.
 
 ## Out of scope by design (not gaps)
 
