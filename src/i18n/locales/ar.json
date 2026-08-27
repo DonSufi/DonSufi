@@ -257,7 +257,7 @@
     "offlineCopyRefresh": "عرض نسخة غير متصلة — اتصل لتحديثها.",
     "offlineCopy": "عرض نسخة غير متصلة.",
     "continueReading": "متابعة القراءة",
-    "surahAyah": "سورة {{surah}}, آية {{ayah}}",
+    "surahAyah": "سورة {{surah}}، آية {{ayah}}",
     "searchSurahs": "ابحث في السور",
     "couldntLoadSurah": "تعذّر تحميل هذه السورة",
     "couldntLoadSurahMessage": "يتطلب اتصالاً في المرة الأولى التي تفتحها، ثم يتم تخزينها مؤقتًا للقراءة دون اتصال.",
