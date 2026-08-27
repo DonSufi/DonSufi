@@ -2,11 +2,11 @@
 
 _This is the privacy policy shipped in-app (Settings → About & Privacy) and reproduced here for reference. Last updated: this project's initial build._
 
-DonSufi is built on one rule: your worship is not a data source.
+Salla is built on one rule: your worship is not a data source.
 
 ## What we collect
 
-**Nothing is sent to us, because there is no "us" to send it to.** DonSufi has no backend server, no user accounts, and no analytics SDK. There is nothing "we" collect, because nothing leaves your device to any server we operate.
+**Nothing is sent to us, because there is no "us" to send it to.** Salla has no backend server, no user accounts, and no analytics SDK. There is nothing "we" collect, because nothing leaves your device to any server we operate.
 
 ## Location
 
@@ -35,5 +35,5 @@ DonSufi is built on one rule: your worship is not a data source.
 
 ## Your control
 
-- Settings → About & Privacy → **Clear all local data** removes everything DonSufi has stored on your device.
+- Settings → About & Privacy → **Clear all local data** removes everything Salla has stored on your device.
 - You can revoke location and notification permissions at any time from your OS settings; the app degrades gracefully (see the in-app messaging when a permission is off) rather than breaking.

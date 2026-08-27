@@ -1,8 +1,8 @@
-# DonSufi
+# Salla
 
 A premium, privacy-first Azan (Adhan) and Islamic prayer companion for iOS and Android, built with Expo (React Native) and TypeScript.
 
-DonSufi calculates accurate prayer times offline using real astronomical formulas, schedules respectful Adhan notifications, finds the Qibla, and bundles the essentials of daily worship — Qur'an, du'a, the Islamic calendar, Ramadan mode, and a private prayer tracker — without selling data or running ads next to worship content.
+Salla calculates accurate prayer times offline using real astronomical formulas, schedules respectful Adhan notifications, finds the Qibla, and bundles the essentials of daily worship — Qur'an, du'a, the Islamic calendar, Ramadan mode, and a private prayer tracker — without selling data or running ads next to worship content.
 
 ## Quick start
 

@@ -43,7 +43,7 @@ export async function remove(key: string): Promise<void> {
   await AsyncStorage.removeItem(key);
 }
 
-/** Wipes all DonSufi-namespaced local data. Used by Settings > Reset / clear local data. */
+/** Wipes all Salla-namespaced local data. Used by Settings > Reset / clear local data. */
 export async function clearAllAppData(): Promise<void> {
   const allKeys = await AsyncStorage.getAllKeys();
   const ours = allKeys.filter((k) => k.startsWith('donsufi:'));

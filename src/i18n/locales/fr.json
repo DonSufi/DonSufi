@@ -1,5 +1,5 @@
 {
-  "common": { "appName": "DonSufi", "next": "Suivant", "back": "Retour", "skip": "Passer", "done": "Terminé", "save": "Enregistrer", "cancel": "Annuler", "retry": "Réessayer", "loading": "Chargement...", "offline": "Vous êtes hors ligne", "search": "Rechercher", "settings": "Paramètres", "today": "Aujourd'hui", "close": "Fermer", "partialTranslation": "traduction partielle", "setLocationTitle": "Définir votre position", "chooseLocation": "Choisir la position", "on": "Activé", "off": "Désactivé", "notSet": "Non défini", "hide": "Masquer", "saved": "Enregistré" },
+  "common": { "appName": "Salla", "next": "Suivant", "back": "Retour", "skip": "Passer", "done": "Terminé", "save": "Enregistrer", "cancel": "Annuler", "retry": "Réessayer", "loading": "Chargement...", "offline": "Vous êtes hors ligne", "search": "Rechercher", "settings": "Paramètres", "today": "Aujourd'hui", "close": "Fermer", "partialTranslation": "traduction partielle", "setLocationTitle": "Définir votre position", "chooseLocation": "Choisir la position", "on": "Activé", "off": "Désactivé", "notSet": "Non défini", "hide": "Masquer", "saved": "Enregistré" },
   "nav": { "home": "Accueil", "prayerTimes": "Horaires", "quran": "Coran", "qibla": "Qibla", "more": "Plus" },
   "more": { "ramadan": "Ramadan", "dua": "Invocations", "calendar": "Calendrier islamique", "tracker": "Suivi des prières", "mosques": "Mosquées", "settings": "Paramètres" },
   "home": {
@@ -7,14 +7,14 @@
     "currentPrayer": "Prière actuelle",
     "remaining": "restant",
     "todaySchedule": "Prières du jour",
-    "needsLocationMessage": "DonSufi a besoin d'une position pour calculer des horaires de prière précis.",
+    "needsLocationMessage": "Salla a besoin d'une position pour calculer des horaires de prière précis.",
     "extremeLatitudeTitle": "Latitude extrême",
     "extremeLatitudeMessage": "À cet endroit, le soleil ne se lève ni ne se couche de la manière habituelle aujourd'hui, donc le calcul standard des horaires de prière ne s'applique pas. Essayez une règle d'ajustement pour hautes latitudes dans les Paramètres de prière, ou référez-vous à la ville la plus proche ayant un jour et une nuit normaux.",
     "openPrayerSettings": "Ouvrir les paramètres de prière"
   },
   "prayers": { "fajr": "Fajr", "sunrise": "Lever du soleil", "dhuhr": "Dhuhr", "asr": "Asr", "sunset": "Coucher du soleil", "maghrib": "Maghrib", "isha": "Isha" },
   "onboarding": {
-    "welcomeTitle": "Bienvenue sur DonSufi",
+    "welcomeTitle": "Bienvenue sur Salla",
     "welcomeBody": "Des horaires de prière précis, des rappels respectueux et l'essentiel de la pratique quotidienne -- privé par conception et conçu pour fonctionner hors ligne.",
     "languageTitle": "Choisissez votre langue",
     "locationTitle": "Où êtes-vous ?",

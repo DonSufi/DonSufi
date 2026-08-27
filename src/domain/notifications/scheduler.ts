@@ -100,7 +100,7 @@ async function scheduleOne(notification: PlannedNotification): Promise<void> {
   });
 }
 
-/** Cancels every DonSufi-scheduled notification, e.g. when the user disables the master switch. */
+/** Cancels every Salla-scheduled notification, e.g. when the user disables the master switch. */
 export async function cancelAllAdhanNotifications(): Promise<void> {
   const previousIds = await readJSON<string[]>(STORAGE_KEYS.scheduledNotificationIds, []);
   await Promise.all(previousIds.map((id) => Notifications.cancelScheduledNotificationAsync(id)));

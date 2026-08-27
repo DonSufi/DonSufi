@@ -3,7 +3,7 @@
 ## Stack
 
 - **Expo (SDK 57) + React Native + TypeScript**, `expo-router` for file-based navigation. Chosen as the pragmatic way to ship one codebase to iOS and Android with a mature ecosystem for the native capabilities this app needs (location, sensors, notifications).
-- **No backend.** DonSufi is a local-first client. The only network calls are: (a) Qur'an text/translation from AlQuran Cloud, (b) reverse/forward geocoding via `expo-location`, (c) mosque search via Google Places (optional, requires a key). Everything else runs entirely offline.
+- **No backend.** Salla is a local-first client. The only network calls are: (a) Qur'an text/translation from AlQuran Cloud, (b) reverse/forward geocoding via `expo-location`, (c) mosque search via Google Places (optional, requires a key). Everything else runs entirely offline.
 - **State**: a single `AppStateProvider` (React Context) loads persisted settings/location on launch and exposes typed setters that write through to `AsyncStorage` and update in-memory state. No Redux/MobX — the app's state shape is small and doesn't need it.
 - **Persistence**: `AsyncStorage`, wrapped by `src/storage/db.ts` into `readJSON`/`writeJSON` helpers that never throw and never hang (a `withTimeout` guard around every read — see "Lessons learned" below).
 

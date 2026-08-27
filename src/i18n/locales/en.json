@@ -1,6 +1,6 @@
 {
   "common": {
-    "appName": "DonSufi",
+    "appName": "Salla",
     "next": "Next",
     "back": "Back",
     "skip": "Skip",
@@ -43,7 +43,7 @@
     "currentPrayer": "Current Prayer",
     "remaining": "remaining",
     "todaySchedule": "Today's Prayers",
-    "needsLocationMessage": "DonSufi needs a location to calculate accurate prayer times.",
+    "needsLocationMessage": "Salla needs a location to calculate accurate prayer times.",
     "extremeLatitudeTitle": "Extreme latitude",
     "extremeLatitudeMessage": "At this location the sun doesn't rise or set in the usual way today, so standard prayer-time calculation doesn't apply. Try a high-latitude adjustment rule in Prayer Settings, or refer to the nearest city with normal day/night for guidance.",
     "openPrayerSettings": "Open prayer settings"
@@ -58,7 +58,7 @@
     "isha": "Isha"
   },
   "onboarding": {
-    "welcomeTitle": "Welcome to DonSufi",
+    "welcomeTitle": "Welcome to Salla",
     "welcomeBody": "Accurate prayer times, respectful reminders, and the essentials of daily worship -- private by design and built to work offline.",
     "languageTitle": "Choose your language",
     "locationTitle": "Where are you?",

@@ -1,6 +1,13 @@
 module.exports = {
   expo: {
-    name: 'DonSufi',
+    // Rebranded from "DonSufi" to "Salla" -- this `name` is what's shown to
+    // users (under the icon, in the app switcher, in store listings). The
+    // slug/scheme/bundle identifiers below intentionally stay "donsufi":
+    // they're invisible technical identifiers already tied to the live EAS
+    // project and any already-installed development build, so changing them
+    // would require a fresh EAS project and reinstalling on every device
+    // for zero user-visible benefit.
+    name: 'Salla',
     slug: 'donsufi',
     version: '1.0.0',
     scheme: 'donsufi',
