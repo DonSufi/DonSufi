@@ -34,9 +34,9 @@ export default function Home() {
       <Screen>
         <StateView
           icon="location-outline"
-          title="Set your location"
-          message="DonSufi needs a location to calculate accurate prayer times."
-          actionLabel="Choose location"
+          title={t('common.setLocationTitle')}
+          message={t('home.needsLocationMessage')}
+          actionLabel={t('common.chooseLocation')}
           onAction={() => router.push('/(tabs)/more/settings/prayer')}
         />
       </Screen>
@@ -59,9 +59,9 @@ export default function Home() {
       <Screen>
         <StateView
           icon="sunny-outline"
-          title="Extreme latitude"
-          message="At this location the sun doesn't rise or set in the usual way today, so standard prayer-time calculation doesn't apply. Try a high-latitude adjustment rule in Prayer Settings, or refer to the nearest city with normal day/night for guidance."
-          actionLabel="Open prayer settings"
+          title={t('home.extremeLatitudeTitle')}
+          message={t('home.extremeLatitudeMessage')}
+          actionLabel={t('home.openPrayerSettings')}
           onAction={() => router.push('/(tabs)/more/settings/prayer')}
         />
       </Screen>

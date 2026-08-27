@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 import { Card } from '../../../../src/components/Card';
 import { ListRow } from '../../../../src/components/ListRow';
@@ -9,55 +10,56 @@ import { AccentColor, ClockFormat, ThemePreference } from '../../../../src/stora
 import { useAppState } from '../../../../src/state/AppStateProvider';
 import { useTheme } from '../../../../src/theme/ThemeProvider';
 
-const THEMES: { id: ThemePreference; label: string }[] = [
-  { id: 'system', label: 'System' },
-  { id: 'light', label: 'Light' },
-  { id: 'dark', label: 'Dark' },
+const THEMES: { id: ThemePreference; labelKey: string }[] = [
+  { id: 'system', labelKey: 'system' },
+  { id: 'light', labelKey: 'light' },
+  { id: 'dark', labelKey: 'dark' },
 ];
 
-const ACCENTS: { id: AccentColor; label: string }[] = [
-  { id: 'emerald', label: 'Emerald' },
-  { id: 'midnightBlue', label: 'Midnight Blue' },
-  { id: 'gold', label: 'Warm Gold' },
+const ACCENTS: { id: AccentColor; labelKey: string }[] = [
+  { id: 'emerald', labelKey: 'emerald' },
+  { id: 'midnightBlue', labelKey: 'midnightBlue' },
+  { id: 'gold', labelKey: 'gold' },
 ];
 
 export default function AppearanceSettingsScreen() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const { appearance, setAppearance } = useAppState();
 
   return (
     <Screen>
       <Card style={{ marginBottom: theme.spacing.lg }}>
         <Text variant="title" style={{ marginBottom: theme.spacing.sm }}>
-          Theme
+          {t('appearanceSettings.themeLabel')}
         </Text>
-        {THEMES.map((t) => (
+        {THEMES.map((opt) => (
           <ListRow
-            key={t.id}
-            label={t.label}
-            icon={appearance.theme === t.id ? 'checkmark-circle' : 'ellipse-outline'}
-            onPress={() => setAppearance({ ...appearance, theme: t.id })}
+            key={opt.id}
+            label={t(`appearanceSettings.themes.${opt.labelKey}`)}
+            icon={appearance.theme === opt.id ? 'checkmark-circle' : 'ellipse-outline'}
+            onPress={() => setAppearance({ ...appearance, theme: opt.id })}
           />
         ))}
       </Card>
 
       <Card style={{ marginBottom: theme.spacing.lg }}>
         <Text variant="title" style={{ marginBottom: theme.spacing.sm }}>
-          Accent color
+          {t('appearanceSettings.accentColorLabel')}
         </Text>
-        {ACCENTS.map((a) => (
+        {ACCENTS.map((opt) => (
           <ListRow
-            key={a.id}
-            label={a.label}
-            icon={appearance.accent === a.id ? 'checkmark-circle' : 'ellipse-outline'}
-            onPress={() => setAppearance({ ...appearance, accent: a.id })}
+            key={opt.id}
+            label={t(`appearanceSettings.accents.${opt.labelKey}`)}
+            icon={appearance.accent === opt.id ? 'checkmark-circle' : 'ellipse-outline'}
+            onPress={() => setAppearance({ ...appearance, accent: opt.id })}
           />
         ))}
       </Card>
 
       <Card>
         <Text variant="title" style={{ marginBottom: theme.spacing.sm }}>
-          Clock format
+          {t('appearanceSettings.clockFormatLabel')}
         </Text>
         <View style={{ flexDirection: 'row', gap: theme.spacing.md }}>
           {(['24h', '12h'] as ClockFormat[]).map((f) => (

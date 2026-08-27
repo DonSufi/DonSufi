@@ -1,8 +1,8 @@
 {
-  "common": { "appName": "DonSufi", "next": "Lanjut", "back": "Kembali", "skip": "Lewati", "done": "Selesai", "save": "Simpan", "cancel": "Batal", "retry": "Coba lagi", "loading": "Memuat...", "offline": "Anda sedang offline", "search": "Cari", "settings": "Pengaturan", "today": "Hari ini", "close": "Tutup", "partialTranslation": "terjemahan sebagian" },
+  "common": { "appName": "DonSufi", "next": "Lanjut", "back": "Kembali", "skip": "Lewati", "done": "Selesai", "save": "Simpan", "cancel": "Batal", "retry": "Coba lagi", "loading": "Memuat...", "offline": "Anda sedang offline", "search": "Cari", "settings": "Pengaturan", "today": "Hari ini", "close": "Tutup", "partialTranslation": "terjemahan sebagian", "setLocationTitle": "Atur lokasi Anda", "chooseLocation": "Pilih lokasi", "on": "Aktif", "off": "Nonaktif", "notSet": "Belum diatur", "hide": "Sembunyikan", "saved": "Tersimpan" },
   "nav": { "home": "Beranda", "prayerTimes": "Waktu Sholat", "quran": "Al-Qur'an", "qibla": "Kiblat", "more": "Lainnya" },
   "more": { "ramadan": "Ramadan", "dua": "Doa & Dzikir", "calendar": "Kalender Hijriah", "tracker": "Pelacak Sholat", "mosques": "Masjid", "settings": "Pengaturan" },
-  "home": { "nextPrayer": "Sholat Berikutnya", "currentPrayer": "Waktu Sholat Saat Ini", "remaining": "tersisa", "todaySchedule": "Jadwal Sholat Hari Ini" },
+  "home": { "nextPrayer": "Sholat Berikutnya", "currentPrayer": "Waktu Sholat Saat Ini", "remaining": "tersisa", "todaySchedule": "Jadwal Sholat Hari Ini", "needsLocationMessage": "DonSufi memerlukan lokasi untuk menghitung waktu sholat yang akurat.", "extremeLatitudeTitle": "Lintang ekstrem", "extremeLatitudeMessage": "Di lokasi ini, matahari tidak terbit atau terbenam dengan cara biasa hari ini, sehingga perhitungan waktu sholat standar tidak berlaku. Coba aturan penyesuaian lintang tinggi di Pengaturan Sholat, atau gunakan kota terdekat dengan siang dan malam normal sebagai panduan.", "openPrayerSettings": "Buka pengaturan sholat" },
   "prayers": { "fajr": "Subuh", "sunrise": "Terbit", "dhuhr": "Dzuhur", "asr": "Ashar", "sunset": "Matahari Terbenam", "maghrib": "Maghrib", "isha": "Isya" },
   "onboarding": {
     "welcomeTitle": "Selamat Datang di DonSufi",
@@ -31,7 +31,11 @@
     "calibrate": "Gerakkan ponsel Anda membentuk angka 8 untuk mengkalibrasi kompas.",
     "lowAccuracy": "Akurasi kompas sedang rendah saat ini.",
     "noSensor": "Perangkat ini tidak memiliki sensor kompas. Menampilkan arah tetap sebagai gantinya.",
-    "distance": "Jarak ke Ka'bah"
+    "distance": "Jarak ke Ka'bah",
+    "needsLocationMessage": "Arah kiblat dihitung berdasarkan lokasi Anda.",
+    "permissionNotGranted": "Izin kompas tidak diberikan",
+    "pointPhoneMessage": "Arahkan sisi atas ponsel Anda {{bearing}}° searah jarum jam dari utara sejati untuk menghadap kiblat.",
+    "bearingNote": "Arah dari utara sejati: {{bearing}}°. Pembacaan kompas dapat melenceng di dekat logam atau perangkat elektronik -- ini alat bantu, bukan pengganti penilaian yang cermat."
   },
   "settings": {
     "prayer": "Pengaturan Sholat",
@@ -55,5 +59,24 @@
     "longitudePlaceholder": "Bujur",
     "invalidCoordinates": "Masukkan lintang (-90 hingga 90) dan bujur (-180 hingga 180) yang valid.",
     "useTheseCoordinates": "Gunakan koordinat ini"
+  },
+  "prayerSettings": {
+    "locationLabel": "Lokasi",
+    "changeLocation": "Ubah lokasi",
+    "calculationMethodLabel": "Metode perhitungan",
+    "changeMethod": "Ubah metode",
+    "madhabAsrLabel": "Madzhab (Ashar)",
+    "madhabDisplay": "Madzhab: {{madhab}}",
+    "highLatitudeRuleLabel": "Aturan lintang tinggi",
+    "highLatitudeRuleDisplay": "Aturan lintang tinggi: {{rule}}",
+    "highLatitudeNote": "Hanya penting di lintang di mana perhitungan sudut senja standar tidak berlaku (kira-kira di atas lingkar kutub Arktik/Antartika, secara musiman).",
+    "manualAdjustmentsLabel": "Penyesuaian manual (menit)",
+    "adjustSettings": "Sesuaikan pengaturan",
+    "highLatOptions": {
+      "recommended": "Direkomendasikan (otomatis)",
+      "middleOfNight": "Tengah Malam",
+      "seventhOfNight": "Sepertujuh Malam",
+      "twilightAngle": "Sudut Senja"
+    }
   }
 }

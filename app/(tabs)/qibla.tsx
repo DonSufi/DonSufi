@@ -61,9 +61,9 @@ export default function QiblaScreen() {
       <Screen>
         <StateView
           icon="location-outline"
-          title="Set your location"
-          message="The Qibla direction is calculated from your location."
-          actionLabel="Choose location"
+          title={t('common.setLocationTitle')}
+          message={t('qibla.needsLocationMessage')}
+          actionLabel={t('common.chooseLocation')}
           onAction={() => router.push('/(tabs)/more/settings/prayer')}
         />
       </Screen>
@@ -82,8 +82,8 @@ export default function QiblaScreen() {
         </Text>
         <StateView
           icon="compass-outline"
-          title={headingState.status === 'permissionDenied' ? 'Compass permission not granted' : t('qibla.noSensor')}
-          message={`Point your phone's top edge ${Math.round(bearing)}° clockwise from true north to face the Qibla.`}
+          title={headingState.status === 'permissionDenied' ? t('qibla.permissionNotGranted') : t('qibla.noSensor')}
+          message={t('qibla.pointPhoneMessage', { bearing: Math.round(bearing) })}
         />
         <Card>
           <Text variant="body" color="secondary">
@@ -143,8 +143,7 @@ export default function QiblaScreen() {
           {t('qibla.distance')}: {Math.round(distance).toLocaleString()} km
         </Text>
         <Text variant="caption" color="secondary">
-          Bearing from true north: {Math.round(bearing)}°. Compass readings can drift near metal or electronics —
-          this is an aid, not a substitute for careful judgment.
+          {t('qibla.bearingNote', { bearing: Math.round(bearing) })}
         </Text>
       </Card>
     </Screen>

@@ -14,7 +14,14 @@
     "settings": "الإعدادات",
     "today": "اليوم",
     "close": "إغلاق",
-    "partialTranslation": "ترجمة جزئية"
+    "partialTranslation": "ترجمة جزئية",
+    "setLocationTitle": "حدد موقعك",
+    "chooseLocation": "اختر الموقع",
+    "on": "تشغيل",
+    "off": "إيقاف",
+    "notSet": "غير محدد",
+    "hide": "إخفاء",
+    "saved": "تم الحفظ"
   },
   "nav": {
     "home": "الرئيسية",
@@ -35,7 +42,11 @@
     "nextPrayer": "الصلاة القادمة",
     "currentPrayer": "الصلاة الحالية",
     "remaining": "متبقٍ",
-    "todaySchedule": "صلوات اليوم"
+    "todaySchedule": "صلوات اليوم",
+    "needsLocationMessage": "يحتاج دون صوفي إلى تحديد الموقع لحساب مواقيت الصلاة الدقيقة.",
+    "extremeLatitudeTitle": "خط عرض متطرف",
+    "extremeLatitudeMessage": "في هذا الموقع، لا تشرق الشمس أو تغرب بالطريقة المعتادة اليوم، لذا لا ينطبق الحساب القياسي لمواقيت الصلاة. جرّب قاعدة تعديل لخطوط العرض العالية في إعدادات الصلاة، أو ارجع إلى أقرب مدينة ذات نهار وليل طبيعيين للاسترشاد بها.",
+    "openPrayerSettings": "فتح إعدادات الصلاة"
   },
   "prayers": {
     "fajr": "الفجر",
@@ -73,7 +84,11 @@
     "calibrate": "حرّك هاتفك على شكل رقم 8 لمعايرة البوصلة.",
     "lowAccuracy": "دقة البوصلة منخفضة حاليًا.",
     "noSensor": "لا يحتوي هذا الجهاز على حساس بوصلة. سيتم عرض اتجاه ثابت بدلاً من ذلك.",
-    "distance": "المسافة إلى الكعبة"
+    "distance": "المسافة إلى الكعبة",
+    "needsLocationMessage": "يُحسب اتجاه القبلة بناءً على موقعك.",
+    "permissionNotGranted": "لم يتم منح إذن البوصلة",
+    "pointPhoneMessage": "وجّه الحافة العلوية لهاتفك بزاوية {{bearing}}° باتجاه عقارب الساعة من الشمال الحقيقي لمواجهة القبلة.",
+    "bearingNote": "الاتجاه من الشمال الحقيقي: {{bearing}}°. قد تنحرف قراءات البوصلة بالقرب من المعادن أو الأجهزة الإلكترونية -- هذه أداة مساعدة، وليست بديلاً عن التقدير الدقيق."
   },
   "settings": {
     "prayer": "إعدادات الصلاة",
@@ -97,5 +112,156 @@
     "longitudePlaceholder": "خط الطول",
     "invalidCoordinates": "أدخل خط عرض صحيح (-90 إلى 90) وخط طول صحيح (-180 إلى 180).",
     "useTheseCoordinates": "استخدام هذه الإحداثيات"
+  },
+  "prayerSettings": {
+    "locationLabel": "الموقع",
+    "changeLocation": "تغيير الموقع",
+    "calculationMethodLabel": "طريقة الحساب",
+    "changeMethod": "تغيير الطريقة",
+    "madhabAsrLabel": "المذهب (العصر)",
+    "madhabDisplay": "المذهب: {{madhab}}",
+    "highLatitudeRuleLabel": "قاعدة خطوط العرض العالية",
+    "highLatitudeRuleDisplay": "قاعدة خطوط العرض العالية: {{rule}}",
+    "highLatitudeNote": "تهم فقط في خطوط العرض التي ينهار عندها الحساب القياسي بزاوية الشفق (تقريبًا فوق الدائرتين القطبيتين الشمالية والجنوبية، موسميًا).",
+    "manualAdjustmentsLabel": "التعديلات اليدوية (بالدقائق)",
+    "adjustSettings": "تعديل الإعدادات",
+    "highLatOptions": {
+      "recommended": "موصى به (تلقائي)",
+      "middleOfNight": "منتصف الليل",
+      "seventhOfNight": "سُبع الليل",
+      "twilightAngle": "زاوية الشفق"
+    }
+  },
+  "notificationSettings": {
+    "adhanNotificationsTitle": "إشعارات الأذان",
+    "fajrGentleNote": "تحتفظ صلاة الفجر بإعداد أكثر لطفًا وبدون تذكير بعد الصلاة، احترامًا لهذا الوقت المبكر.",
+    "soundLabel": "الصوت: {{sound}} (اضغط للتغيير)",
+    "vibrateLabel": "الاهتزاز: {{state}}",
+    "preReminderLabel": "تذكير مسبق: {{minutes}} دقيقة",
+    "offMinutes": "متوقف",
+    "enabledLabel": "مفعّل",
+    "disabledLabel": "معطّل",
+    "soundModes": {
+      "full": "أذان كامل",
+      "short": "أذان مختصر",
+      "notificationOnly": "إشعار فقط",
+      "silent": "صامت"
+    }
+  },
+  "appearanceSettings": {
+    "themeLabel": "المظهر",
+    "accentColorLabel": "اللون المميز",
+    "clockFormatLabel": "صيغة الساعة",
+    "themes": {
+      "system": "النظام",
+      "light": "فاتح",
+      "dark": "داكن"
+    },
+    "accents": {
+      "emerald": "زمردي",
+      "midnightBlue": "أزرق ليلي",
+      "gold": "ذهبي دافئ"
+    }
+  },
+  "accessibilitySettings": {
+    "textSizeLabel": "حجم النص",
+    "scaleLabel": "المقياس: {{value}}x",
+    "textSizeNote": "هذا بالإضافة إلى إعداد حجم النص الخاص بجهازك، والذي يحترمه التطبيق بالفعل.",
+    "highContrastLabel": "تباين عالٍ",
+    "highContrastDescription": "حدود أقوى وفصل أوضح للألوان.",
+    "largeTouchTargetsLabel": "أهداف لمس أكبر",
+    "largeTouchTargetsDescription": "أزرار وصفوف أكبر لتسهيل اللمس.",
+    "reduceMotionLabel": "تقليل الحركة",
+    "reduceMotionDescription": "يقلل الرسوم المتحركة في جميع أنحاء التطبيق."
+  },
+  "privacySettings": {
+    "title": "خصوصيتك، باختصار",
+    "bulletLocation": "يُستخدم موقعك فقط لحساب مواقيت الصلاة واتجاه القبلة. يُخزَّن على هذا الجهاز ولا يُباع أو يُشارك مع المعلنين أبدًا.",
+    "bulletLocalData": "يبقى سجل متابعة الصلاة، والإشارات المرجعية للقرآن، ومفضلات الأدعية محليًا على هذا الجهاز بشكل افتراضي. لا يوجد حساب، ولا مزامنة سحابية، ولا أي أداة تحليلات في هذا التطبيق.",
+    "bulletExternalServices": "يتواصل قارئ القرآن وباحث المساجد مع خدمات خارجية موثقة علنًا (AlQuran Cloud وGoogle Places على التوالي) فقط عند استخدامك الفعلي لهذه الميزات، لجلب محتوى يتم تخزينه بعد ذلك على جهازك.",
+    "bulletClearData": "يمكنك مسح جميع البيانات المحلية في أي وقت أدناه.",
+    "clearDataButton": "مسح جميع البيانات المحلية",
+    "confirmTitle": "مسح جميع البيانات المحلية؟",
+    "confirmMessage": "سيؤدي هذا إلى إزالة موقعك المحفوظ، والإعدادات، وسجل متابعة الصلاة، والإشارات المرجعية للقرآن، والمحتوى المخزن مؤقتًا من هذا الجهاز. لا يمكن التراجع عن هذا.",
+    "confirmAction": "مسح البيانات",
+    "doneTitle": "تم",
+    "doneMessage": "أعد تشغيل التطبيق للمرور بالإعداد مرة أخرى."
+  },
+  "dua": {
+    "allCategories": "جميع الفئات",
+    "sourceLabel": "المصدر: {{source}}",
+    "pendingReview": "قيد المراجعة الشرعية",
+    "category": {
+      "morningAdhkar": "أذكار الصباح",
+      "eveningAdhkar": "أذكار المساء",
+      "beforeSleeping": "قبل النوم",
+      "afterPrayer": "بعد الصلاة",
+      "travel": "السفر",
+      "eating": "الطعام",
+      "protection": "الحماية",
+      "ramadan": "رمضان",
+      "general": "عام"
+    }
+  },
+  "tracker": {
+    "intro": "سجل خاص ومحلي لتأملك الشخصي -- ليس لوحة نتائج أبدًا. اضغط على صلاة للتنقل بين مُصلاة، فائتة، قضاء، أو غير متابَعة.",
+    "currentStreak": "التتابع الحالي",
+    "streakDays": "{{count}} يوم",
+    "completion30": "إنجاز 30 يومًا",
+    "status": {
+      "notTracked": "—",
+      "prayed": "مُصلاة",
+      "missed": "فائتة",
+      "qada": "قضاء"
+    }
+  },
+  "ramadan": {
+    "notRamadanMessage": "ليس رمضان حاليًا (حسابيًا). ستتحول هذه الشاشة تلقائيًا إلى وضع الصيام بمجرد بدء رمضان في تقويمك.",
+    "dayLabel": "رمضان — اليوم {{day}} من 29–30",
+    "untilIftar": "حتى الإفطار",
+    "untilSuhoorEnds": "حتى انتهاء السحور",
+    "suhoorEnded": "انتهى وقت السحور لليوم.",
+    "todaysFast": "صيام اليوم",
+    "fastStatus": {
+      "fasted": "صائم",
+      "missed": "مُفطر",
+      "exempt": "معفى",
+      "notTracked": "غير متابَع"
+    }
+  },
+  "mosques": {
+    "notConfiguredTitle": "البحث عن المساجد غير مُعدّ بعد",
+    "notConfiguredMessage": "تحتاج هذه الميزة إلى مفتاح Google Places API لإضافته إلى إعدادات التطبيق. لا تُعرض بيانات مساجد مُلفَّقة بدلاً من ذلك -- راجع docs/LIMITATIONS.md لخطوات الإعداد.",
+    "searchPlaceholder": "ابحث عن المساجد بالاسم",
+    "couldntLoad": "تعذّر تحميل المساجد",
+    "noneFound": "لم يتم العثور على مساجد قريبة"
+  },
+  "calendar": {
+    "todayCalculated": "اليوم (محسوب)",
+    "keyDatesThisYear": "تواريخ مهمة هذا العام",
+    "estimated": "(تقديري)",
+    "footnote": "تُحسب هذه التواريخ من التقويم الهجري الحسابي القياسي، وليست إعلانًا رسميًا لرؤية الهلال، وقد تختلف بيوم واحد حسب بلدك أو مسجدك المحلي. تأكد دائمًا من تواريخ رمضان والعيدين من جهة محلية موثوقة.",
+    "events": {
+      "islamicNewYear": "رأس السنة الهجرية",
+      "ashura": "عاشوراء",
+      "ramadanStart": "أول أيام رمضان",
+      "laylatAlQadr27": "ليلة القدر (الليلة 27، الأكثر شيوعًا)",
+      "eidAlFitr": "عيد الفطر",
+      "arafah": "يوم عرفة",
+      "eidAlAdha": "عيد الأضحى"
+    }
+  },
+  "quran": {
+    "offlineIndexTitle": "تعذّر تحميل فهرس القرآن",
+    "offlineIndexMessage": "يتطلب هذا اتصالاً بالإنترنت في المرة الأولى، وبعد ذلك يصبح كل ما فتحته متاحًا دون اتصال.",
+    "offlineCopyRefresh": "عرض نسخة غير متصلة — اتصل لتحديثها.",
+    "offlineCopy": "عرض نسخة غير متصلة.",
+    "continueReading": "متابعة القراءة",
+    "surahAyah": "سورة {{surah}}, آية {{ayah}}",
+    "searchSurahs": "ابحث في السور",
+    "couldntLoadSurah": "تعذّر تحميل هذه السورة",
+    "couldntLoadSurahMessage": "يتطلب اتصالاً في المرة الأولى التي تفتحها، ثم يتم تخزينها مؤقتًا للقراءة دون اتصال.",
+    "bookmarkAyah": "إضافة إشارة مرجعية لهذه الآية",
+    "attribution": "النص العربي والترجمة ({{edition}}) عبر AlQuran Cloud."
   }
 }

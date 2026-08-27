@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { router } from 'expo-router';
 import { View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 import { Card } from '../../../src/components/Card';
 import { Screen } from '../../../src/components/Screen';
@@ -22,6 +23,7 @@ function dateKey(d: Date): string {
 
 export default function RamadanScreen() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const { location, prayerSettings } = useAppState();
   const now = useClock(1000);
   const [status, setStatus] = useState<FastingStatus>('notTracked');
@@ -38,8 +40,8 @@ export default function RamadanScreen() {
       <Screen>
         <StateView
           icon="location-outline"
-          title="Set your location"
-          actionLabel="Choose location"
+          title={t('common.setLocationTitle')}
+          actionLabel={t('common.chooseLocation')}
           onAction={() => router.push('/(tabs)/more/settings/prayer')}
         />
       </Screen>
@@ -60,8 +62,7 @@ export default function RamadanScreen() {
       {!info.isRamadan && (
         <Card style={{ marginBottom: theme.spacing.lg }}>
           <Text variant="body" color="secondary">
-            It isn't currently Ramadan (calculated). This screen will switch into fasting mode automatically once
-            Ramadan begins for your calendar.
+            {t('ramadan.notRamadanMessage')}
           </Text>
         </Card>
       )}
@@ -69,7 +70,7 @@ export default function RamadanScreen() {
       {info.isRamadan && (
         <Card style={{ backgroundColor: theme.accent, marginBottom: theme.spacing.lg }}>
           <Text variant="caption" style={{ color: theme.colors.textOnAccent, opacity: 0.8 }}>
-            RAMADAN — DAY {info.ramadanDayNumber} OF 29–30
+            {t('ramadan.dayLabel', { day: info.ramadanDayNumber })}
           </Text>
           {info.msUntilIftar != null ? (
             <>
@@ -77,7 +78,7 @@ export default function RamadanScreen() {
                 {formatCountdown(info.msUntilIftar)}
               </Text>
               <Text variant="body" style={{ color: theme.colors.textOnAccent, opacity: 0.85 }}>
-                until Iftar
+                {t('ramadan.untilIftar')}
               </Text>
             </>
           ) : info.msUntilSuhoorEnds != null ? (
@@ -86,12 +87,12 @@ export default function RamadanScreen() {
                 {formatCountdown(info.msUntilSuhoorEnds)}
               </Text>
               <Text variant="body" style={{ color: theme.colors.textOnAccent, opacity: 0.85 }}>
-                until Suhoor ends
+                {t('ramadan.untilSuhoorEnds')}
               </Text>
             </>
           ) : (
             <Text variant="body" style={{ color: theme.colors.textOnAccent }}>
-              Suhoor has ended for today.
+              {t('ramadan.suhoorEnded')}
             </Text>
           )}
         </Card>
@@ -99,7 +100,7 @@ export default function RamadanScreen() {
 
       <Card style={{ marginBottom: theme.spacing.lg }}>
         <Text variant="title" style={{ marginBottom: theme.spacing.sm }}>
-          Today's fast
+          {t('ramadan.todaysFast')}
         </Text>
         <View style={{ flexDirection: 'row', gap: theme.spacing.sm, flexWrap: 'wrap' }}>
           {(['fasted', 'missed', 'exempt', 'notTracked'] as FastingStatus[]).map((s) => (
@@ -116,7 +117,7 @@ export default function RamadanScreen() {
                 overflow: 'hidden',
               }}
             >
-              {s === 'notTracked' ? 'Not tracked' : s[0].toUpperCase() + s.slice(1)}
+              {t(`ramadan.fastStatus.${s}`)}
             </Text>
           ))}
         </View>

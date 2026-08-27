@@ -1,8 +1,8 @@
 {
-  "common": { "appName": "ڈان صوفی", "next": "اگلا", "back": "پیچھے", "skip": "نظر انداز کریں", "done": "مکمل", "save": "محفوظ کریں", "cancel": "منسوخ کریں", "retry": "دوبارہ کوشش کریں", "loading": "لوڈ ہو رہا ہے...", "offline": "آپ آف لائن ہیں", "search": "تلاش کریں", "settings": "ترتیبات", "today": "آج", "close": "بند کریں", "partialTranslation": "جزوی ترجمہ" },
+  "common": { "appName": "ڈان صوفی", "next": "اگلا", "back": "پیچھے", "skip": "نظر انداز کریں", "done": "مکمل", "save": "محفوظ کریں", "cancel": "منسوخ کریں", "retry": "دوبارہ کوشش کریں", "loading": "لوڈ ہو رہا ہے...", "offline": "آپ آف لائن ہیں", "search": "تلاش کریں", "settings": "ترتیبات", "today": "آج", "close": "بند کریں", "partialTranslation": "جزوی ترجمہ", "setLocationTitle": "اپنا مقام مقرر کریں", "chooseLocation": "مقام منتخب کریں", "on": "آن", "off": "آف", "notSet": "غیر متعین", "hide": "چھپائیں", "saved": "محفوظ ہو گیا" },
   "nav": { "home": "ہوم", "prayerTimes": "اوقاتِ نماز", "quran": "قرآن", "qibla": "قبلہ", "more": "مزید" },
   "more": { "ramadan": "رمضان", "dua": "دعائیں", "calendar": "اسلامی تقویم", "tracker": "نماز ٹریکر", "mosques": "مساجد", "settings": "ترتیبات" },
-  "home": { "nextPrayer": "اگلی نماز", "currentPrayer": "موجودہ نماز", "remaining": "باقی", "todaySchedule": "آج کی نمازیں" },
+  "home": { "nextPrayer": "اگلی نماز", "currentPrayer": "موجودہ نماز", "remaining": "باقی", "todaySchedule": "آج کی نمازیں", "needsLocationMessage": "ڈان صوفی کو درست نماز کے اوقات کا حساب لگانے کے لیے مقام درکار ہے۔", "extremeLatitudeTitle": "انتہائی عرض بلد", "extremeLatitudeMessage": "اس مقام پر، آج سورج معمول کے مطابق طلوع یا غروب نہیں ہوتا، اس لیے معیاری نماز کے وقت کا حساب لاگو نہیں ہوتا۔ نماز کی ترتیبات میں اعلیٰ عرض بلد کی ایڈجسٹمنٹ کا اصول آزمائیں، یا معمول کے دن رات والے قریب ترین شہر کی رہنمائی حاصل کریں۔", "openPrayerSettings": "نماز کی ترتیبات کھولیں" },
   "prayers": { "fajr": "فجر", "sunrise": "طلوعِ آفتاب", "dhuhr": "ظہر", "asr": "عصر", "sunset": "غروبِ آفتاب", "maghrib": "مغرب", "isha": "عشاء" },
   "onboarding": {
     "welcomeTitle": "ڈان صوفی میں خوش آمدید",
@@ -31,7 +31,11 @@
     "calibrate": "کمپاس کیلیبریٹ کرنے کے لیے اپنے فون کو 8 کی شکل میں گھمائیں۔",
     "lowAccuracy": "اس وقت کمپاس کی درستگی کم ہے۔",
     "noSensor": "اس ڈیوائس میں کمپاس سینسر نہیں ہے۔ اس کے بجائے ایک مقررہ سمت دکھائی جا رہی ہے۔",
-    "distance": "کعبہ تک فاصلہ"
+    "distance": "کعبہ تک فاصلہ",
+    "needsLocationMessage": "قبلہ کی سمت آپ کے مقام سے حساب کی جاتی ہے۔",
+    "permissionNotGranted": "کمپاس کی اجازت نہیں دی گئی",
+    "pointPhoneMessage": "قبلہ کا رخ کرنے کے لیے اپنے فون کے اوپری کنارے کو حقیقی شمال سے {{bearing}}° گھڑی کی سمت میں موڑیں۔",
+    "bearingNote": "حقیقی شمال سے سمت: {{bearing}}°۔ کمپاس کی ریڈنگز دھات یا الیکٹرانک آلات کے قریب بھٹک سکتی ہیں -- یہ ایک معاون ذریعہ ہے، محتاط اندازے کا متبادل نہیں۔"
   },
   "settings": {
     "prayer": "نماز کی ترتیبات",
@@ -55,5 +59,24 @@
     "longitudePlaceholder": "طول بلد",
     "invalidCoordinates": "درست عرض بلد (-90 سے 90) اور طول بلد (-180 سے 180) درج کریں۔",
     "useTheseCoordinates": "یہ کوآرڈینیٹس استعمال کریں"
+  },
+  "prayerSettings": {
+    "locationLabel": "مقام",
+    "changeLocation": "مقام تبدیل کریں",
+    "calculationMethodLabel": "حساب کا طریقہ",
+    "changeMethod": "طریقہ تبدیل کریں",
+    "madhabAsrLabel": "مذہب (عصر)",
+    "madhabDisplay": "مذہب: {{madhab}}",
+    "highLatitudeRuleLabel": "اعلیٰ عرض بلد کا اصول",
+    "highLatitudeRuleDisplay": "اعلیٰ عرض بلد کا اصول: {{rule}}",
+    "highLatitudeNote": "صرف ان عرض بلد پر اہم ہے جہاں معیاری شفق زاویہ حساب ناکام ہو جاتا ہے (تقریباً آرکٹک/انٹارکٹک دائروں کے اوپر، موسمی طور پر)۔",
+    "manualAdjustmentsLabel": "دستی ایڈجسٹمنٹس (منٹ)",
+    "adjustSettings": "ترتیبات ایڈجسٹ کریں",
+    "highLatOptions": {
+      "recommended": "تجویز کردہ (خودکار)",
+      "middleOfNight": "آدھی رات",
+      "seventhOfNight": "رات کا ساتواں حصہ",
+      "twilightAngle": "شفق کا زاویہ"
+    }
   }
 }

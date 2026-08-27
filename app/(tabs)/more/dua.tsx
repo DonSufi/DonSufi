@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Pressable } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 import { Card } from '../../../src/components/Card';
 import { Screen } from '../../../src/components/Screen';
@@ -7,18 +8,6 @@ import { Text } from '../../../src/components/Text';
 import { DUA_LIBRARY } from '../../../src/data/duas/duaLibrary';
 import { DuaCategory } from '../../../src/data/duas/types';
 import { useTheme } from '../../../src/theme/ThemeProvider';
-
-const CATEGORY_LABELS: Record<DuaCategory, string> = {
-  morningAdhkar: 'Morning Adhkar',
-  eveningAdhkar: 'Evening Adhkar',
-  beforeSleeping: 'Before Sleeping',
-  afterPrayer: 'After Prayer',
-  travel: 'Travel',
-  eating: 'Eating',
-  protection: 'Protection',
-  ramadan: 'Ramadan',
-  general: 'General',
-};
 
 const CATEGORY_ORDER: DuaCategory[] = [
   'morningAdhkar',
@@ -34,6 +23,7 @@ const CATEGORY_ORDER: DuaCategory[] = [
 
 export default function DuaScreen() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState<DuaCategory | null>(null);
 
   if (activeCategory) {
@@ -46,10 +36,10 @@ export default function DuaScreen() {
           onPress={() => setActiveCategory(null)}
           style={{ marginBottom: theme.spacing.md }}
         >
-          ← All categories
+          ← {t('dua.allCategories')}
         </Text>
         <Text variant="headline" style={{ marginBottom: theme.spacing.lg }}>
-          {CATEGORY_LABELS[activeCategory]}
+          {t(`dua.category.${activeCategory}`)}
         </Text>
         {duas.map((dua) => (
           <Card key={dua.id} style={{ marginBottom: theme.spacing.md }}>
@@ -66,8 +56,8 @@ export default function DuaScreen() {
               {dua.translation}
             </Text>
             <Text variant="caption" color="secondary">
-              Source: {dua.source}
-              {!dua.verified ? ' · pending scholarly review' : ''}
+              {t('dua.sourceLabel', { source: dua.source })}
+              {!dua.verified ? ` · ${t('dua.pendingReview')}` : ''}
             </Text>
           </Card>
         ))}
@@ -85,7 +75,7 @@ export default function DuaScreen() {
             key={cat}
             onPress={() => setActiveCategory(cat)}
             accessibilityRole="button"
-            accessibilityLabel={CATEGORY_LABELS[cat]}
+            accessibilityLabel={t(`dua.category.${cat}`)}
             style={{
               paddingVertical: theme.spacing.md,
               borderBottomWidth: 1,
@@ -94,7 +84,7 @@ export default function DuaScreen() {
               justifyContent: 'space-between',
             }}
           >
-            <Text variant="bodyLarge">{CATEGORY_LABELS[cat]}</Text>
+            <Text variant="bodyLarge">{t(`dua.category.${cat}`)}</Text>
             <Text variant="body" color="secondary">
               {count}
             </Text>

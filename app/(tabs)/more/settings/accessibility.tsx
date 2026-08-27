@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 import { Card } from '../../../../src/components/Card';
 import { Screen } from '../../../../src/components/Screen';
@@ -9,22 +10,25 @@ import { useTheme } from '../../../../src/theme/ThemeProvider';
 
 export default function AccessibilitySettingsScreen() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const { accessibility, setAccessibility } = useAppState();
 
-  const toggles: Array<{ key: keyof typeof accessibility; label: string; description: string }> = [
-    { key: 'highContrast', label: 'High contrast', description: 'Stronger borders and color separation.' },
-    { key: 'largeTouchTargets', label: 'Large touch targets', description: 'Bigger buttons and rows for easier tapping.' },
-    { key: 'reduceMotion', label: 'Reduce motion', description: 'Minimizes animation throughout the app.' },
+  const toggles: Array<{ key: keyof typeof accessibility; labelKey: string; descriptionKey: string }> = [
+    { key: 'highContrast', labelKey: 'highContrastLabel', descriptionKey: 'highContrastDescription' },
+    { key: 'largeTouchTargets', labelKey: 'largeTouchTargetsLabel', descriptionKey: 'largeTouchTargetsDescription' },
+    { key: 'reduceMotion', labelKey: 'reduceMotionLabel', descriptionKey: 'reduceMotionDescription' },
   ];
 
   return (
     <Screen>
       <Card style={{ marginBottom: theme.spacing.lg }}>
         <Text variant="title" style={{ marginBottom: theme.spacing.sm }}>
-          Text size
+          {t('accessibilitySettings.textSizeLabel')}
         </Text>
         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Text variant="body">Scale: {accessibility.textScale.toFixed(2)}x</Text>
+          <Text variant="body">
+            {t('accessibilitySettings.scaleLabel', { value: accessibility.textScale.toFixed(2) })}
+          </Text>
           <View style={{ flexDirection: 'row', gap: theme.spacing.md }}>
             <Text
               color="accent"
@@ -41,27 +45,27 @@ export default function AccessibilitySettingsScreen() {
           </View>
         </View>
         <Text variant="caption" color="secondary" style={{ marginTop: theme.spacing.xs }}>
-          This is in addition to your device's own text-size setting, which the app already respects.
+          {t('accessibilitySettings.textSizeNote')}
         </Text>
       </Card>
 
-      {toggles.map((t) => (
-        <Card key={t.key} style={{ marginBottom: theme.spacing.md }}>
+      {toggles.map((toggle) => (
+        <Card key={toggle.key} style={{ marginBottom: theme.spacing.md }}>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
             <View style={{ flex: 1 }}>
               <Text variant="body" weight="600">
-                {t.label}
+                {t(`accessibilitySettings.${toggle.labelKey}`)}
               </Text>
               <Text variant="caption" color="secondary">
-                {t.description}
+                {t(`accessibilitySettings.${toggle.descriptionKey}`)}
               </Text>
             </View>
             <Text
               variant="body"
               color="accent"
-              onPress={() => setAccessibility({ ...accessibility, [t.key]: !accessibility[t.key] })}
+              onPress={() => setAccessibility({ ...accessibility, [toggle.key]: !accessibility[toggle.key] })}
             >
-              {accessibility[t.key] ? 'On' : 'Off'}
+              {accessibility[toggle.key] ? t('common.on') : t('common.off')}
             </Text>
           </View>
         </Card>

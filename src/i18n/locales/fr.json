@@ -1,8 +1,17 @@
 {
-  "common": { "appName": "DonSufi", "next": "Suivant", "back": "Retour", "skip": "Passer", "done": "Terminé", "save": "Enregistrer", "cancel": "Annuler", "retry": "Réessayer", "loading": "Chargement...", "offline": "Vous êtes hors ligne", "search": "Rechercher", "settings": "Paramètres", "today": "Aujourd'hui", "close": "Fermer", "partialTranslation": "traduction partielle" },
+  "common": { "appName": "DonSufi", "next": "Suivant", "back": "Retour", "skip": "Passer", "done": "Terminé", "save": "Enregistrer", "cancel": "Annuler", "retry": "Réessayer", "loading": "Chargement...", "offline": "Vous êtes hors ligne", "search": "Rechercher", "settings": "Paramètres", "today": "Aujourd'hui", "close": "Fermer", "partialTranslation": "traduction partielle", "setLocationTitle": "Définir votre position", "chooseLocation": "Choisir la position", "on": "Activé", "off": "Désactivé", "notSet": "Non défini", "hide": "Masquer", "saved": "Enregistré" },
   "nav": { "home": "Accueil", "prayerTimes": "Horaires", "quran": "Coran", "qibla": "Qibla", "more": "Plus" },
   "more": { "ramadan": "Ramadan", "dua": "Invocations", "calendar": "Calendrier islamique", "tracker": "Suivi des prières", "mosques": "Mosquées", "settings": "Paramètres" },
-  "home": { "nextPrayer": "Prochaine prière", "currentPrayer": "Prière actuelle", "remaining": "restant", "todaySchedule": "Prières du jour" },
+  "home": {
+    "nextPrayer": "Prochaine prière",
+    "currentPrayer": "Prière actuelle",
+    "remaining": "restant",
+    "todaySchedule": "Prières du jour",
+    "needsLocationMessage": "DonSufi a besoin d'une position pour calculer des horaires de prière précis.",
+    "extremeLatitudeTitle": "Latitude extrême",
+    "extremeLatitudeMessage": "À cet endroit, le soleil ne se lève ni ne se couche de la manière habituelle aujourd'hui, donc le calcul standard des horaires de prière ne s'applique pas. Essayez une règle d'ajustement pour hautes latitudes dans les Paramètres de prière, ou référez-vous à la ville la plus proche ayant un jour et une nuit normaux.",
+    "openPrayerSettings": "Ouvrir les paramètres de prière"
+  },
   "prayers": { "fajr": "Fajr", "sunrise": "Lever du soleil", "dhuhr": "Dhuhr", "asr": "Asr", "sunset": "Coucher du soleil", "maghrib": "Maghrib", "isha": "Isha" },
   "onboarding": {
     "welcomeTitle": "Bienvenue sur DonSufi",
@@ -31,7 +40,11 @@
     "calibrate": "Déplacez votre téléphone en forme de 8 pour calibrer la boussole.",
     "lowAccuracy": "La précision de la boussole est faible actuellement.",
     "noSensor": "Cet appareil n'a pas de capteur de boussole. Affichage d'un relèvement fixe à la place.",
-    "distance": "Distance jusqu'à la Kaaba"
+    "distance": "Distance jusqu'à la Kaaba",
+    "needsLocationMessage": "La direction de la Qibla est calculée à partir de votre position.",
+    "permissionNotGranted": "Autorisation de la boussole non accordée",
+    "pointPhoneMessage": "Orientez le haut de votre téléphone à {{bearing}}° dans le sens des aiguilles d'une montre par rapport au nord réel pour faire face à la Qibla.",
+    "bearingNote": "Direction par rapport au nord réel : {{bearing}}°. Les lectures de la boussole peuvent dériver près de métaux ou d'appareils électroniques -- c'est une aide, pas un substitut à un jugement attentif."
   },
   "settings": {
     "prayer": "Paramètres de prière",
@@ -55,5 +68,24 @@
     "longitudePlaceholder": "Longitude",
     "invalidCoordinates": "Saisissez une latitude valide (-90 à 90) et une longitude valide (-180 à 180).",
     "useTheseCoordinates": "Utiliser ces coordonnées"
+  },
+  "prayerSettings": {
+    "locationLabel": "Position",
+    "changeLocation": "Changer de position",
+    "calculationMethodLabel": "Méthode de calcul",
+    "changeMethod": "Changer de méthode",
+    "madhabAsrLabel": "Madhhab (Asr)",
+    "madhabDisplay": "Madhhab : {{madhab}}",
+    "highLatitudeRuleLabel": "Règle des hautes latitudes",
+    "highLatitudeRuleDisplay": "Règle des hautes latitudes : {{rule}}",
+    "highLatitudeNote": "Pertinent uniquement aux latitudes où le calcul standard par angle crépusculaire échoue (à peu près au-dessus des cercles polaires arctique/antarctique, selon la saison).",
+    "manualAdjustmentsLabel": "Ajustements manuels (minutes)",
+    "adjustSettings": "Ajuster les paramètres",
+    "highLatOptions": {
+      "recommended": "Recommandé (auto)",
+      "middleOfNight": "Milieu de la nuit",
+      "seventhOfNight": "Septième de la nuit",
+      "twilightAngle": "Angle crépusculaire"
+    }
   }
 }

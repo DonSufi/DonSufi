@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { router } from 'expo-router';
 import { ActivityIndicator, TextInput, View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 import { ListRow } from '../../../src/components/ListRow';
 import { Screen } from '../../../src/components/Screen';
@@ -19,6 +20,7 @@ type State =
 
 export default function QuranIndex() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const [state, setState] = useState<State>({ status: 'loading' });
   const [query, setQuery] = useState('');
   const [lastRead, setLastRead] = useState<LastReadPosition | null>(null);
@@ -53,9 +55,9 @@ export default function QuranIndex() {
       <Screen>
         <StateView
           icon="cloud-offline-outline"
-          title="Can't load the Qur'an index"
-          message="This needs an internet connection the first time, then everything you've opened is available offline."
-          actionLabel="Try again"
+          title={t('quran.offlineIndexTitle')}
+          message={t('quran.offlineIndexMessage')}
+          actionLabel={t('common.retry')}
           onAction={load}
         />
       </Screen>
@@ -74,13 +76,13 @@ export default function QuranIndex() {
       <View style={{ padding: theme.spacing.lg, paddingBottom: theme.spacing.sm }}>
         {state.fromCache && (
           <Text variant="caption" color="secondary" style={{ marginBottom: theme.spacing.sm }}>
-            Showing offline copy — connect to refresh.
+            {t('quran.offlineCopyRefresh')}
           </Text>
         )}
         {lastRead && (
           <ListRow
-            label="Continue reading"
-            sublabel={`Surah ${lastRead.surah}, Ayah ${lastRead.ayah}`}
+            label={t('quran.continueReading')}
+            sublabel={t('quran.surahAyah', { surah: lastRead.surah, ayah: lastRead.ayah })}
             icon="bookmark-outline"
             onPress={() => router.push(`/(tabs)/quran/${lastRead.surah}` as never)}
             showChevron
@@ -89,7 +91,7 @@ export default function QuranIndex() {
         <TextInput
           value={query}
           onChangeText={setQuery}
-          placeholder="Search surahs"
+          placeholder={t('quran.searchSurahs')}
           placeholderTextColor={theme.colors.textSecondary}
           style={{
             borderWidth: 1,

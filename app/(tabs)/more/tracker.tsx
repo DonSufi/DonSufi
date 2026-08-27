@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 import { Card } from '../../../src/components/Card';
 import { Screen } from '../../../src/components/Screen';
@@ -11,12 +12,6 @@ import { useTheme } from '../../../src/theme/ThemeProvider';
 
 const PRAYERS: Array<'fajr' | 'dhuhr' | 'asr' | 'maghrib' | 'isha'> = ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha'];
 const STATUS_CYCLE: PrayerLogStatus[] = ['notTracked', 'prayed', 'missed', 'qada'];
-const STATUS_LABEL: Record<PrayerLogStatus, string> = {
-  notTracked: '—',
-  prayed: 'Prayed',
-  missed: 'Missed',
-  qada: 'Qada',
-};
 
 function todayKey(): string {
   const d = new Date();
@@ -25,6 +20,7 @@ function todayKey(): string {
 
 export default function TrackerScreen() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const [history, setHistory] = useState<PrayerTrackerHistory>({});
   const key = todayKey();
 
@@ -52,20 +48,19 @@ export default function TrackerScreen() {
   return (
     <Screen>
       <Text variant="body" color="secondary" style={{ marginBottom: theme.spacing.lg }}>
-        A private, local log for your own reflection — never a scoreboard. Tap a prayer to cycle through Prayed,
-        Missed, Qada, or Not tracked.
+        {t('tracker.intro')}
       </Text>
 
       <View style={{ flexDirection: 'row', gap: theme.spacing.md, marginBottom: theme.spacing.lg }}>
         <Card style={{ flex: 1 }}>
           <Text variant="caption" color="secondary">
-            Current streak
+            {t('tracker.currentStreak')}
           </Text>
-          <Text variant="headline">{streak}d</Text>
+          <Text variant="headline">{t('tracker.streakDays', { count: streak })}</Text>
         </Card>
         <Card style={{ flex: 1 }}>
           <Text variant="caption" color="secondary">
-            30-day completion
+            {t('tracker.completion30')}
           </Text>
           <Text variant="headline">{Math.round(rate * 100)}%</Text>
         </Card>
@@ -85,7 +80,7 @@ export default function TrackerScreen() {
                 borderTopColor: theme.colors.border,
               }}
             >
-              {prayer[0].toUpperCase() + prayer.slice(1)} — {STATUS_LABEL[status]}
+              {t(`prayers.${prayer}`, { defaultValue: prayer })} — {t(`tracker.status.${status}`)}
             </Text>
           );
         })}

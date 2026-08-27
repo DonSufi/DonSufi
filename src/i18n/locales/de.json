@@ -1,8 +1,8 @@
 {
-  "common": { "appName": "DonSufi", "next": "Weiter", "back": "Zurück", "skip": "Überspringen", "done": "Fertig", "save": "Speichern", "cancel": "Abbrechen", "retry": "Erneut versuchen", "loading": "Wird geladen...", "offline": "Du bist offline", "search": "Suchen", "settings": "Einstellungen", "today": "Heute", "close": "Schließen", "partialTranslation": "teilweise übersetzt" },
+  "common": { "appName": "DonSufi", "next": "Weiter", "back": "Zurück", "skip": "Überspringen", "done": "Fertig", "save": "Speichern", "cancel": "Abbrechen", "retry": "Erneut versuchen", "loading": "Wird geladen...", "offline": "Du bist offline", "search": "Suchen", "settings": "Einstellungen", "today": "Heute", "close": "Schließen", "partialTranslation": "teilweise übersetzt", "setLocationTitle": "Standort festlegen", "chooseLocation": "Standort wählen", "on": "An", "off": "Aus", "notSet": "Nicht festgelegt", "hide": "Ausblenden", "saved": "Gespeichert" },
   "nav": { "home": "Start", "prayerTimes": "Gebetszeiten", "quran": "Koran", "qibla": "Qibla", "more": "Mehr" },
   "more": { "ramadan": "Ramadan", "dua": "Bittgebete", "calendar": "Islamischer Kalender", "tracker": "Gebets-Tracker", "mosques": "Moscheen", "settings": "Einstellungen" },
-  "home": { "nextPrayer": "Nächstes Gebet", "currentPrayer": "Aktuelles Gebet", "remaining": "verbleibend", "todaySchedule": "Heutige Gebete" },
+  "home": { "nextPrayer": "Nächstes Gebet", "currentPrayer": "Aktuelles Gebet", "remaining": "verbleibend", "todaySchedule": "Heutige Gebete", "needsLocationMessage": "DonSufi benötigt einen Standort, um genaue Gebetszeiten zu berechnen.", "extremeLatitudeTitle": "Extreme Breitengrad", "extremeLatitudeMessage": "An diesem Ort geht die Sonne heute nicht auf die übliche Weise auf oder unter, daher gilt die Standardberechnung der Gebetszeiten nicht. Probiere eine Anpassungsregel für hohe Breitengrade in den Gebetseinstellungen, oder orientiere dich an der nächstgelegenen Stadt mit normalem Tag und normaler Nacht.", "openPrayerSettings": "Gebetseinstellungen öffnen" },
   "prayers": { "fajr": "Fajr", "sunrise": "Sonnenaufgang", "dhuhr": "Dhuhr", "asr": "Asr", "sunset": "Sonnenuntergang", "maghrib": "Maghrib", "isha": "Isha" },
   "onboarding": {
     "welcomeTitle": "Willkommen bei DonSufi",
@@ -31,7 +31,11 @@
     "calibrate": "Bewege dein Telefon in einer 8er-Form, um den Kompass zu kalibrieren.",
     "lowAccuracy": "Die Kompassgenauigkeit ist gerade niedrig.",
     "noSensor": "Dieses Gerät hat keinen Kompasssensor. Stattdessen wird eine feste Peilung angezeigt.",
-    "distance": "Entfernung zur Kaaba"
+    "distance": "Entfernung zur Kaaba",
+    "needsLocationMessage": "Die Qibla-Richtung wird anhand deines Standorts berechnet.",
+    "permissionNotGranted": "Kompass-Berechtigung nicht erteilt",
+    "pointPhoneMessage": "Richte die Oberkante deines Telefons {{bearing}}° im Uhrzeigersinn vom wahren Norden aus, um zur Qibla zu zeigen.",
+    "bearingNote": "Peilung vom wahren Norden: {{bearing}}°. Kompassmessungen können in der Nähe von Metall oder Elektronik abweichen -- dies ist eine Hilfe, kein Ersatz für sorgfältige Einschätzung."
   },
   "settings": {
     "prayer": "Gebetseinstellungen",
@@ -55,5 +59,24 @@
     "longitudePlaceholder": "Längengrad",
     "invalidCoordinates": "Gib einen gültigen Breitengrad (-90 bis 90) und Längengrad (-180 bis 180) ein.",
     "useTheseCoordinates": "Diese Koordinaten verwenden"
+  },
+  "prayerSettings": {
+    "locationLabel": "Standort",
+    "changeLocation": "Standort ändern",
+    "calculationMethodLabel": "Berechnungsmethode",
+    "changeMethod": "Methode ändern",
+    "madhabAsrLabel": "Madhhab (Asr)",
+    "madhabDisplay": "Madhhab: {{madhab}}",
+    "highLatitudeRuleLabel": "Regel für hohe Breitengrade",
+    "highLatitudeRuleDisplay": "Regel für hohe Breitengrade: {{rule}}",
+    "highLatitudeNote": "Relevant nur bei Breitengraden, an denen die Standardberechnung mit Dämmerungswinkel versagt (etwa oberhalb der arktischen/antarktischen Polarkreise, je nach Jahreszeit).",
+    "manualAdjustmentsLabel": "Manuelle Anpassungen (Minuten)",
+    "adjustSettings": "Einstellungen anpassen",
+    "highLatOptions": {
+      "recommended": "Empfohlen (automatisch)",
+      "middleOfNight": "Mitte der Nacht",
+      "seventhOfNight": "Siebtel der Nacht",
+      "twilightAngle": "Dämmerungswinkel"
+    }
   }
 }

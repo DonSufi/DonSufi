@@ -66,7 +66,7 @@ describe('locale files', () => {
 
       it('covers at least the navigation and common chrome, per its documented "partial" scope', () => {
         const flat = flatten(catalog);
-        const requiredNamespaces = ['common', 'nav', 'more', 'home', 'prayers'];
+        const requiredNamespaces = ['common', 'nav', 'more', 'home', 'prayers', 'qibla', 'prayerSettings'];
         for (const ns of requiredNamespaces) {
           const nsKeys = englishKeys.filter((k) => k.startsWith(`${ns}.`));
           for (const key of nsKeys) {

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Stack, useLocalSearchParams } from 'expo-router';
 import { ActivityIndicator, Pressable, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 
 import { Button } from '../../../src/components/Button';
 import { Screen } from '../../../src/components/Screen';
@@ -19,6 +20,7 @@ export default function SurahReader() {
   const { surah } = useLocalSearchParams<{ surah: string }>();
   const surahNumber = Number(surah);
   const theme = useTheme();
+  const { t } = useTranslation();
   const { appearance, setAppearance } = useAppState();
   const [state, setState] = useState<State>({ status: 'loading' });
   const [bookmarked, setBookmarked] = useState<Set<number>>(new Set());
@@ -75,9 +77,9 @@ export default function SurahReader() {
       <Screen>
         <StateView
           icon="cloud-offline-outline"
-          title="Couldn't load this surah"
-          message="Needs a connection the first time you open it, then it's cached for offline reading."
-          actionLabel="Try again"
+          title={t('quran.couldntLoadSurah')}
+          message={t('quran.couldntLoadSurahMessage')}
+          actionLabel={t('common.retry')}
           onAction={load}
         />
       </Screen>
@@ -91,7 +93,7 @@ export default function SurahReader() {
       <Stack.Screen options={{ title: `Surah ${surahNumber}` }} />
       {fromCache && (
         <Text variant="caption" color="secondary" style={{ marginBottom: theme.spacing.sm }}>
-          Showing offline copy.
+          {t('quran.offlineCopy')}
         </Text>
       )}
       <View style={{ flexDirection: 'row', gap: theme.spacing.sm, marginBottom: theme.spacing.md }}>
@@ -115,7 +117,7 @@ export default function SurahReader() {
               <Text variant="caption" color="secondary">
                 {surahNumber}:{ayah.numberInSurah}
               </Text>
-              <Pressable onPress={() => toggleBookmark(ayah.numberInSurah)} accessibilityLabel="Bookmark this ayah">
+              <Pressable onPress={() => toggleBookmark(ayah.numberInSurah)} accessibilityLabel={t('quran.bookmarkAyah')}>
                 <Ionicons
                   name={isBookmarked ? 'bookmark' : 'bookmark-outline'}
                   size={20}
@@ -142,7 +144,7 @@ export default function SurahReader() {
         );
       })}
       <Text variant="caption" color="secondary" style={{ marginTop: theme.spacing.md }}>
-        Arabic text and translation ({content.translationEdition}) via AlQuran Cloud.
+        {t('quran.attribution', { edition: content.translationEdition })}
       </Text>
     </Screen>
   );

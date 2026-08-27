@@ -14,7 +14,14 @@
     "settings": "Settings",
     "today": "Today",
     "close": "Close",
-    "partialTranslation": "partial translation"
+    "partialTranslation": "partial translation",
+    "setLocationTitle": "Set your location",
+    "chooseLocation": "Choose location",
+    "on": "On",
+    "off": "Off",
+    "notSet": "Not set",
+    "hide": "Hide",
+    "saved": "Saved"
   },
   "nav": {
     "home": "Home",
@@ -35,7 +42,11 @@
     "nextPrayer": "Next Prayer",
     "currentPrayer": "Current Prayer",
     "remaining": "remaining",
-    "todaySchedule": "Today's Prayers"
+    "todaySchedule": "Today's Prayers",
+    "needsLocationMessage": "DonSufi needs a location to calculate accurate prayer times.",
+    "extremeLatitudeTitle": "Extreme latitude",
+    "extremeLatitudeMessage": "At this location the sun doesn't rise or set in the usual way today, so standard prayer-time calculation doesn't apply. Try a high-latitude adjustment rule in Prayer Settings, or refer to the nearest city with normal day/night for guidance.",
+    "openPrayerSettings": "Open prayer settings"
   },
   "prayers": {
     "fajr": "Fajr",
@@ -73,7 +84,11 @@
     "calibrate": "Move your phone in a figure-8 to calibrate the compass.",
     "lowAccuracy": "Compass accuracy is low right now.",
     "noSensor": "This device doesn't have a compass sensor. Showing a fixed bearing instead.",
-    "distance": "Distance to the Kaaba"
+    "distance": "Distance to the Kaaba",
+    "needsLocationMessage": "The Qibla direction is calculated from your location.",
+    "permissionNotGranted": "Compass permission not granted",
+    "pointPhoneMessage": "Point your phone's top edge {{bearing}}° clockwise from true north to face the Qibla.",
+    "bearingNote": "Bearing from true north: {{bearing}}°. Compass readings can drift near metal or electronics -- this is an aid, not a substitute for careful judgment."
   },
   "settings": {
     "prayer": "Prayer Settings",
@@ -97,5 +112,156 @@
     "longitudePlaceholder": "Longitude",
     "invalidCoordinates": "Enter a valid latitude (-90 to 90) and longitude (-180 to 180).",
     "useTheseCoordinates": "Use these coordinates"
+  },
+  "prayerSettings": {
+    "locationLabel": "Location",
+    "changeLocation": "Change location",
+    "calculationMethodLabel": "Calculation method",
+    "changeMethod": "Change method",
+    "madhabAsrLabel": "Madhhab (Asr)",
+    "madhabDisplay": "Madhhab: {{madhab}}",
+    "highLatitudeRuleLabel": "High-latitude rule",
+    "highLatitudeRuleDisplay": "High-latitude rule: {{rule}}",
+    "highLatitudeNote": "Only matters at latitudes where standard twilight-angle calculation breaks down (roughly above the Arctic/Antarctic circles, seasonally).",
+    "manualAdjustmentsLabel": "Manual adjustments (minutes)",
+    "adjustSettings": "Adjust settings",
+    "highLatOptions": {
+      "recommended": "Recommended (auto)",
+      "middleOfNight": "Middle of the Night",
+      "seventhOfNight": "Seventh of the Night",
+      "twilightAngle": "Twilight Angle"
+    }
+  },
+  "notificationSettings": {
+    "adhanNotificationsTitle": "Adhan notifications",
+    "fajrGentleNote": "Fajr keeps a gentler default and no post-prayer nudge, out of respect for the early hour.",
+    "soundLabel": "Sound: {{sound}} (tap to change)",
+    "vibrateLabel": "Vibrate: {{state}}",
+    "preReminderLabel": "Pre-reminder: {{minutes}} min",
+    "offMinutes": "off",
+    "enabledLabel": "Enabled",
+    "disabledLabel": "Disabled",
+    "soundModes": {
+      "full": "Full Adhan",
+      "short": "Short Adhan",
+      "notificationOnly": "Notification only",
+      "silent": "Silent"
+    }
+  },
+  "appearanceSettings": {
+    "themeLabel": "Theme",
+    "accentColorLabel": "Accent color",
+    "clockFormatLabel": "Clock format",
+    "themes": {
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "accents": {
+      "emerald": "Emerald",
+      "midnightBlue": "Midnight Blue",
+      "gold": "Warm Gold"
+    }
+  },
+  "accessibilitySettings": {
+    "textSizeLabel": "Text size",
+    "scaleLabel": "Scale: {{value}}x",
+    "textSizeNote": "This is in addition to your device's own text-size setting, which the app already respects.",
+    "highContrastLabel": "High contrast",
+    "highContrastDescription": "Stronger borders and color separation.",
+    "largeTouchTargetsLabel": "Large touch targets",
+    "largeTouchTargetsDescription": "Bigger buttons and rows for easier tapping.",
+    "reduceMotionLabel": "Reduce motion",
+    "reduceMotionDescription": "Minimizes animation throughout the app."
+  },
+  "privacySettings": {
+    "title": "Your privacy, in short",
+    "bulletLocation": "Your location is used only to calculate prayer times and the Qibla direction. It's stored on this device and is never sold or shared with advertisers.",
+    "bulletLocalData": "Prayer tracker history, Qur'an bookmarks, and du'a favorites stay local to this device by default. There is no account, no cloud sync, and no analytics SDK in this app.",
+    "bulletExternalServices": "The Qur'an reader and mosque finder contact external, publicly documented services (AlQuran Cloud and Google Places, respectively) only when you actively use those features, to fetch content that's then cached on your device.",
+    "bulletClearData": "You can clear all local data at any time below.",
+    "clearDataButton": "Clear all local data",
+    "confirmTitle": "Clear all local data?",
+    "confirmMessage": "This removes your saved location, settings, prayer tracker history, Quran bookmarks, and cached content from this device. This cannot be undone.",
+    "confirmAction": "Clear data",
+    "doneTitle": "Done",
+    "doneMessage": "Restart the app to go through setup again."
+  },
+  "dua": {
+    "allCategories": "All categories",
+    "sourceLabel": "Source: {{source}}",
+    "pendingReview": "Pending scholarly review",
+    "category": {
+      "morningAdhkar": "Morning Adhkar",
+      "eveningAdhkar": "Evening Adhkar",
+      "beforeSleeping": "Before Sleeping",
+      "afterPrayer": "After Prayer",
+      "travel": "Travel",
+      "eating": "Eating",
+      "protection": "Protection",
+      "ramadan": "Ramadan",
+      "general": "General"
+    }
+  },
+  "tracker": {
+    "intro": "A private, local log for your own reflection -- never a scoreboard. Tap a prayer to cycle through Prayed, Missed, Qada, or Not tracked.",
+    "currentStreak": "Current streak",
+    "streakDays": "{{count}}d",
+    "completion30": "30-day completion",
+    "status": {
+      "notTracked": "—",
+      "prayed": "Prayed",
+      "missed": "Missed",
+      "qada": "Qada"
+    }
+  },
+  "ramadan": {
+    "notRamadanMessage": "It isn't currently Ramadan (calculated). This screen will switch into fasting mode automatically once Ramadan begins for your calendar.",
+    "dayLabel": "RAMADAN — DAY {{day}} OF 29–30",
+    "untilIftar": "until Iftar",
+    "untilSuhoorEnds": "until Suhoor ends",
+    "suhoorEnded": "Suhoor has ended for today.",
+    "todaysFast": "Today's fast",
+    "fastStatus": {
+      "fasted": "Fasted",
+      "missed": "Missed",
+      "exempt": "Exempt",
+      "notTracked": "Not tracked"
+    }
+  },
+  "mosques": {
+    "notConfiguredTitle": "Mosque search isn't configured yet",
+    "notConfiguredMessage": "This feature needs a Google Places API key to be added to the app configuration. There's no fabricated mosque data shown in its place -- see docs/LIMITATIONS.md for setup steps.",
+    "searchPlaceholder": "Search mosques by name",
+    "couldntLoad": "Couldn't load mosques",
+    "noneFound": "No mosques found nearby"
+  },
+  "calendar": {
+    "todayCalculated": "TODAY (CALCULATED)",
+    "keyDatesThisYear": "Key dates this year",
+    "estimated": "(estimated)",
+    "footnote": "These dates are calculated from a standard arithmetic Hijri calendar, not an official moon-sighting announcement, and can shift by a day depending on your country or local mosque. Always confirm Ramadan and Eid dates with a trusted local authority.",
+    "events": {
+      "islamicNewYear": "Islamic New Year",
+      "ashura": "Ashura",
+      "ramadanStart": "First Day of Ramadan",
+      "laylatAlQadr27": "Laylat al-Qadr (27th, commonly observed)",
+      "eidAlFitr": "Eid al-Fitr",
+      "arafah": "Day of Arafah",
+      "eidAlAdha": "Eid al-Adha"
+    }
+  },
+  "quran": {
+    "offlineIndexTitle": "Can't load the Qur'an index",
+    "offlineIndexMessage": "This needs an internet connection the first time, then everything you've opened is available offline.",
+    "offlineCopyRefresh": "Showing offline copy — connect to refresh.",
+    "offlineCopy": "Showing offline copy.",
+    "continueReading": "Continue reading",
+    "surahAyah": "Surah {{surah}}, Ayah {{ayah}}",
+    "searchSurahs": "Search surahs",
+    "couldntLoadSurah": "Couldn't load this surah",
+    "couldntLoadSurahMessage": "Needs a connection the first time you open it, then it's cached for offline reading.",
+    "bookmarkAyah": "Bookmark this ayah",
+    "attribution": "Arabic text and translation ({{edition}}) via AlQuran Cloud."
   }
 }

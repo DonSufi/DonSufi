@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 import { Button } from '../../../../src/components/Button';
 import { Card } from '../../../../src/components/Card';
@@ -12,17 +13,18 @@ import { HighLatitudeRuleId, PrayerOffsets } from '../../../../src/domain/prayer
 import { useAppState } from '../../../../src/state/AppStateProvider';
 import { useTheme } from '../../../../src/theme/ThemeProvider';
 
-const HIGH_LAT_OPTIONS: { id: HighLatitudeRuleId; label: string }[] = [
-  { id: 'recommended', label: 'Recommended (auto)' },
-  { id: 'middleofthenight', label: 'Middle of the Night' },
-  { id: 'seventhofthenight', label: 'Seventh of the Night' },
-  { id: 'twilightangle', label: 'Twilight Angle' },
+const HIGH_LAT_OPTIONS: { id: HighLatitudeRuleId; labelKey: string }[] = [
+  { id: 'recommended', labelKey: 'recommended' },
+  { id: 'middleofthenight', labelKey: 'middleOfNight' },
+  { id: 'seventhofthenight', labelKey: 'seventhOfNight' },
+  { id: 'twilightangle', labelKey: 'twilightAngle' },
 ];
 
 const PRAYER_OFFSET_KEYS: Array<keyof PrayerOffsets> = ['fajr', 'sunrise', 'dhuhr', 'asr', 'maghrib', 'isha'];
 
 export default function PrayerSettingsScreen() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const { location, setLocation, prayerSettings, setPrayerSettings } = useAppState();
   const [showLocationPicker, setShowLocationPicker] = useState(false);
   const [showMethods, setShowMethods] = useState(false);
@@ -38,12 +40,16 @@ export default function PrayerSettingsScreen() {
     <Screen>
       <Card style={{ marginBottom: theme.spacing.lg }}>
         <Text variant="title" style={{ marginBottom: theme.spacing.sm }}>
-          Location
+          {t('prayerSettings.locationLabel')}
         </Text>
         <Text variant="body" color="secondary" style={{ marginBottom: theme.spacing.sm }}>
-          {location ? location.label : 'Not set'}
+          {location ? location.label : t('common.notSet')}
         </Text>
-        <Button label={showLocationPicker ? 'Hide' : 'Change location'} variant="ghost" onPress={() => setShowLocationPicker((v) => !v)} />
+        <Button
+          label={showLocationPicker ? t('common.hide') : t('prayerSettings.changeLocation')}
+          variant="ghost"
+          onPress={() => setShowLocationPicker((v) => !v)}
+        />
         {showLocationPicker && (
           <View style={{ marginTop: theme.spacing.md }}>
             <LocationPicker
@@ -58,12 +64,16 @@ export default function PrayerSettingsScreen() {
 
       <Card style={{ marginBottom: theme.spacing.lg }}>
         <Text variant="title" style={{ marginBottom: theme.spacing.sm }}>
-          Calculation method
+          {t('prayerSettings.calculationMethodLabel')}
         </Text>
         <Text variant="body" color="secondary" style={{ marginBottom: theme.spacing.sm }}>
           {CALCULATION_METHODS.find((m) => m.id === prayerSettings.method)?.name}
         </Text>
-        <Button label={showMethods ? 'Hide' : 'Change method'} variant="ghost" onPress={() => setShowMethods((v) => !v)} />
+        <Button
+          label={showMethods ? t('common.hide') : t('prayerSettings.changeMethod')}
+          variant="ghost"
+          onPress={() => setShowMethods((v) => !v)}
+        />
         {showMethods &&
           CALCULATION_METHODS.map((m) => (
             <ListRow
@@ -78,15 +88,15 @@ export default function PrayerSettingsScreen() {
 
       <Card style={{ marginBottom: theme.spacing.lg }}>
         <Text variant="title" style={{ marginBottom: theme.spacing.sm }}>
-          Madhhab (Asr)
+          {t('prayerSettings.madhabAsrLabel')}
         </Text>
         <ListRow
-          label="Standard (Shafi'i/Maliki/Hanbali)"
+          label={t('onboarding.madhabShafiLabel')}
           icon={prayerSettings.madhab === 'shafi' ? 'checkmark-circle' : 'ellipse-outline'}
           onPress={() => setPrayerSettings({ ...prayerSettings, madhab: 'shafi' })}
         />
         <ListRow
-          label="Hanafi"
+          label={t('onboarding.madhabHanafiLabel')}
           icon={prayerSettings.madhab === 'hanafi' ? 'checkmark-circle' : 'ellipse-outline'}
           onPress={() => setPrayerSettings({ ...prayerSettings, madhab: 'hanafi' })}
         />
@@ -94,16 +104,15 @@ export default function PrayerSettingsScreen() {
 
       <Card style={{ marginBottom: theme.spacing.lg }}>
         <Text variant="title" style={{ marginBottom: theme.spacing.sm }}>
-          High-latitude rule
+          {t('prayerSettings.highLatitudeRuleLabel')}
         </Text>
         <Text variant="caption" color="secondary" style={{ marginBottom: theme.spacing.sm }}>
-          Only matters at latitudes where standard twilight-angle calculation breaks down (roughly above the Arctic/
-          Antarctic circles, seasonally).
+          {t('prayerSettings.highLatitudeNote')}
         </Text>
         {HIGH_LAT_OPTIONS.map((opt) => (
           <ListRow
             key={opt.id}
-            label={opt.label}
+            label={t(`prayerSettings.highLatOptions.${opt.labelKey}`)}
             icon={prayerSettings.highLatitudeRule === opt.id ? 'checkmark-circle' : 'ellipse-outline'}
             onPress={() => setPrayerSettings({ ...prayerSettings, highLatitudeRule: opt.id })}
           />
@@ -112,7 +121,7 @@ export default function PrayerSettingsScreen() {
 
       <Card>
         <Text variant="title" style={{ marginBottom: theme.spacing.sm }}>
-          Manual adjustments (minutes)
+          {t('prayerSettings.manualAdjustmentsLabel')}
         </Text>
         {PRAYER_OFFSET_KEYS.map((key) => (
           <View
@@ -120,7 +129,7 @@ export default function PrayerSettingsScreen() {
             style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: theme.spacing.sm }}
           >
             <Text variant="body" style={{ textTransform: 'capitalize' }}>
-              {key}
+              {t(`prayers.${key}`, { defaultValue: key })}
             </Text>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: theme.spacing.md }}>
               <Text variant="body" color="accent" onPress={() => adjustOffset(key, -1)}>

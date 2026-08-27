@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { router } from 'expo-router';
 import { ActivityIndicator, Linking, TextInput, View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 import { ListRow } from '../../../src/components/ListRow';
 import { Screen } from '../../../src/components/Screen';
@@ -20,6 +21,7 @@ type State =
 
 export default function MosquesScreen() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const { location } = useAppState();
   const [state, setState] = useState<State>({ status: 'loading' });
   const [query, setQuery] = useState('');
@@ -60,8 +62,8 @@ export default function MosquesScreen() {
       <Screen>
         <StateView
           icon="location-outline"
-          title="Set your location"
-          actionLabel="Choose location"
+          title={t('common.setLocationTitle')}
+          actionLabel={t('common.chooseLocation')}
           onAction={() => router.push('/(tabs)/more/settings/prayer')}
         />
       </Screen>
@@ -73,8 +75,8 @@ export default function MosquesScreen() {
       <Screen>
         <StateView
           icon="construct-outline"
-          title="Mosque search isn't configured yet"
-          message="This feature needs a Google Places API key to be added to the app configuration. There's no fabricated mosque data shown in its place — see docs/LIMITATIONS.md for setup steps."
+          title={t('mosques.notConfiguredTitle')}
+          message={t('mosques.notConfiguredMessage')}
         />
       </Screen>
     );
@@ -86,7 +88,7 @@ export default function MosquesScreen() {
         <TextInput
           value={query}
           onChangeText={handleSearch}
-          placeholder="Search mosques by name"
+          placeholder={t('mosques.searchPlaceholder')}
           placeholderTextColor={theme.colors.textSecondary}
           style={{
             borderWidth: 1,
@@ -99,11 +101,11 @@ export default function MosquesScreen() {
       </View>
       {state.status === 'loading' && <ActivityIndicator />}
       {state.status === 'error' && (
-        <StateView icon="cloud-offline-outline" title="Couldn't load mosques" actionLabel="Try again" onAction={load} />
+        <StateView icon="cloud-offline-outline" title={t('mosques.couldntLoad')} actionLabel={t('common.retry')} onAction={load} />
       )}
       {state.status === 'ready' &&
         (state.mosques.length === 0 ? (
-          <StateView icon="business-outline" title="No mosques found nearby" />
+          <StateView icon="business-outline" title={t('mosques.noneFound')} />
         ) : (
           <View style={{ paddingHorizontal: theme.spacing.lg }}>
             {state.mosques.map((m) => (
@@ -115,7 +117,7 @@ export default function MosquesScreen() {
                 onPress={() => Linking.openURL(mosqueNavigationUrl(m))}
                 right={
                   <Text variant="caption" color="accent" onPress={() => toggleFavorite(m)}>
-                    {favorites.some((f) => f.placeId === m.placeId) ? 'Saved' : 'Save'}
+                    {favorites.some((f) => f.placeId === m.placeId) ? t('common.saved') : t('common.save')}
                   </Text>
                 }
               />

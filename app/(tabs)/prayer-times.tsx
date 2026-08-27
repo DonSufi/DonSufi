@@ -10,9 +10,16 @@ import { StateView } from '../../src/components/StateView';
 import { Text } from '../../src/components/Text';
 import { computeSchedule } from '../../src/domain/prayerTimes/engine';
 import { getMethodMeta } from '../../src/domain/prayerTimes/methods';
-import { ALL_TIMELINE_ENTRIES } from '../../src/domain/prayerTimes/types';
+import { ALL_TIMELINE_ENTRIES, HighLatitudeRuleId } from '../../src/domain/prayerTimes/types';
 import { useAppState } from '../../src/state/AppStateProvider';
 import { useTheme } from '../../src/theme/ThemeProvider';
+
+const HIGH_LAT_LABEL_KEY: Record<HighLatitudeRuleId, string> = {
+  recommended: 'recommended',
+  middleofthenight: 'middleOfNight',
+  seventhofthenight: 'seventhOfNight',
+  twilightangle: 'twilightAngle',
+};
 
 export default function PrayerTimesScreen() {
   const theme = useTheme();
@@ -24,8 +31,8 @@ export default function PrayerTimesScreen() {
       <Screen>
         <StateView
           icon="location-outline"
-          title="Set your location"
-          actionLabel="Choose location"
+          title={t('common.setLocationTitle')}
+          actionLabel={t('common.chooseLocation')}
           onAction={() => router.push('/(tabs)/more/settings/prayer')}
         />
       </Screen>
@@ -46,13 +53,24 @@ export default function PrayerTimesScreen() {
           {methodMeta.name}
         </Text>
         <Text variant="caption" color="secondary">
-          Madhhab: {prayerSettings.madhab === 'hanafi' ? 'Hanafi' : 'Standard (Shafi/Maliki/Hanbali)'}
+          {t('prayerSettings.madhabDisplay', {
+            madhab:
+              prayerSettings.madhab === 'hanafi'
+                ? t('onboarding.madhabHanafiLabel')
+                : t('onboarding.madhabShafiLabel'),
+          })}
         </Text>
         <Text variant="caption" color="secondary">
-          High-latitude rule: {prayerSettings.highLatitudeRule}
+          {t('prayerSettings.highLatitudeRuleDisplay', {
+            rule: t(`prayerSettings.highLatOptions.${HIGH_LAT_LABEL_KEY[prayerSettings.highLatitudeRule]}`),
+          })}
         </Text>
         <View style={{ marginTop: theme.spacing.sm }}>
-          <Button label="Adjust settings" variant="ghost" onPress={() => router.push('/(tabs)/more/settings/prayer')} />
+          <Button
+            label={t('prayerSettings.adjustSettings')}
+            variant="ghost"
+            onPress={() => router.push('/(tabs)/more/settings/prayer')}
+          />
         </View>
       </Card>
 
