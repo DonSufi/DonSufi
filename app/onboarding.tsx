@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { router } from 'expo-router';
 import { View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 import { Button } from '../src/components/Button';
 import { Card } from '../src/components/Card';
@@ -21,6 +22,7 @@ const STEP_COUNT = 7;
 
 export default function Onboarding() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const { completeOnboarding, setLocation, setPrayerSettings, setNotificationSettings } = useAppState();
   const { changeLanguage } = useLanguageSync();
 
@@ -67,22 +69,21 @@ export default function Onboarding() {
 
       {step === 0 && (
         <View style={{ gap: theme.spacing.md }}>
-          <Text variant="display">DonSufi</Text>
+          <Text variant="display">{t('onboarding.welcomeTitle')}</Text>
           <Text variant="bodyLarge" color="secondary">
-            Accurate prayer times, respectful reminders, and the essentials of daily worship — private by design,
-            built to work offline.
+            {t('onboarding.welcomeBody')}
           </Text>
         </View>
       )}
 
       {step === 1 && (
         <View style={{ gap: theme.spacing.md }}>
-          <Text variant="title">Choose your language</Text>
+          <Text variant="title">{t('onboarding.languageTitle')}</Text>
           {SUPPORTED_LANGUAGES.map((l) => (
             <ListRow
               key={l.code}
               label={l.label}
-              sublabel={l.complete ? undefined : 'partial translation'}
+              sublabel={l.complete ? undefined : t('common.partialTranslation')}
               onPress={() => changeLanguage(l.code)}
               icon="language-outline"
             />
@@ -92,15 +93,15 @@ export default function Onboarding() {
 
       {step === 2 && (
         <View style={{ gap: theme.spacing.md }}>
-          <Text variant="title">Where are you?</Text>
+          <Text variant="title">{t('onboarding.locationTitle')}</Text>
           <Text variant="body" color="secondary">
-            Used only to calculate accurate prayer times and the Qibla direction. Nothing is shared or sold.
+            {t('onboarding.locationBody')}
           </Text>
           <LocationPicker onSelect={setLocalLocation} />
           {location && (
             <Card>
               <Text variant="body" weight="600">
-                Selected: {location.label}
+                {t('onboarding.selectedLocation', { label: location.label })}
               </Text>
             </Card>
           )}
@@ -109,7 +110,7 @@ export default function Onboarding() {
 
       {step === 3 && (
         <View style={{ gap: theme.spacing.md }}>
-          <Text variant="title">Calculation method</Text>
+          <Text variant="title">{t('onboarding.methodTitle')}</Text>
           {CALCULATION_METHODS.filter((m) => m.id !== 'Other').map((m) => (
             <ListRow
               key={m.id}
@@ -124,16 +125,16 @@ export default function Onboarding() {
 
       {step === 4 && (
         <View style={{ gap: theme.spacing.md }}>
-          <Text variant="title">Madhhab (Asr calculation)</Text>
+          <Text variant="title">{t('onboarding.madhabTitle')}</Text>
           <ListRow
-            label="Standard (Shafi'i, Maliki, Hanbali)"
-            sublabel="Asr begins when a shadow equals object length"
+            label={t('onboarding.madhabShafiLabel')}
+            sublabel={t('onboarding.madhabShafiDescription')}
             onPress={() => setMadhab('shafi')}
             icon={madhab === 'shafi' ? 'checkmark-circle' : 'ellipse-outline'}
           />
           <ListRow
-            label="Hanafi"
-            sublabel="Asr begins when a shadow is twice the object length"
+            label={t('onboarding.madhabHanafiLabel')}
+            sublabel={t('onboarding.madhabHanafiDescription')}
             onPress={() => setMadhab('hanafi')}
             icon={madhab === 'hanafi' ? 'checkmark-circle' : 'ellipse-outline'}
           />
@@ -142,13 +143,12 @@ export default function Onboarding() {
 
       {step === 5 && (
         <View style={{ gap: theme.spacing.md }}>
-          <Text variant="title">Prayer notifications</Text>
+          <Text variant="title">{t('onboarding.notificationsTitle')}</Text>
           <Text variant="body" color="secondary">
-            You can fine-tune the sound, vibration, and reminders for each prayer — including a gentler Fajr
-            experience — anytime in Settings.
+            {t('onboarding.notificationsBody')}
           </Text>
           <ListRow
-            label="Enable Adhan notifications"
+            label={t('onboarding.enableNotifications')}
             onPress={() => setNotificationsEnabled((v) => !v)}
             icon={notificationsEnabled ? 'checkmark-circle' : 'ellipse-outline'}
           />
@@ -157,19 +157,24 @@ export default function Onboarding() {
 
       {step === 6 && (
         <View style={{ gap: theme.spacing.md }}>
-          <Text variant="title">Your privacy</Text>
+          <Text variant="title">{t('onboarding.privacyTitle')}</Text>
           <Text variant="body" color="secondary">
-            Your location and prayer history stay on this device. We don't sell data, and we don't run advertising
-            trackers. Location permission is optional — you can always set your location manually instead. Full
-            details are in Settings → About &amp; Privacy.
+            {t('onboarding.privacyBody')}
           </Text>
         </View>
       )}
 
       <View style={{ flexDirection: 'row', gap: theme.spacing.md, marginTop: theme.spacing.xl }}>
-        {step > 0 && <View style={{ flex: 1 }}><Button label="Back" variant="ghost" onPress={back} /></View>}
+        {step > 0 && (
+          <View style={{ flex: 1 }}>
+            <Button label={t('common.back')} variant="ghost" onPress={back} />
+          </View>
+        )}
         <View style={{ flex: 1 }}>
-          <Button label={step === STEP_COUNT - 1 ? 'Get started' : 'Next'} onPress={step === STEP_COUNT - 1 ? finish : next} />
+          <Button
+            label={step === STEP_COUNT - 1 ? t('onboarding.getStarted') : t('common.next')}
+            onPress={step === STEP_COUNT - 1 ? finish : next}
+          />
         </View>
       </View>
     </Screen>

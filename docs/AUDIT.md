@@ -8,7 +8,7 @@ Self-audit performed before declaring this build complete, as required by the pr
 
 ✅ TypeScript compiles with zero errors (`npm run typecheck`) across the entire app and domain layer.
 
-✅ 61 unit tests pass, covering the calculation engine, Hijri calendar, Qibla, notification planner, prayer tracker, and DST transitions (`npm test`, run under `TZ=America/New_York` specifically to exercise real spring-forward/fall-back boundaries rather than a DST-free host default).
+✅ 92 unit tests pass, covering the calculation engine, Hijri calendar, Qibla, notification planner, prayer tracker, DST transitions, and locale-file integrity (`npm test`, run under `TZ=America/New_York` specifically to exercise real spring-forward/fall-back boundaries rather than a DST-free host default).
 
 🟡 No component-level UI tests (toolchain issue in this environment — see `docs/LIMITATIONS.md`). Mitigated by a manual end-to-end smoke test (onboarding → Home → other tabs) via a headless browser against a web export, which exercises the same React component tree and caught two real bugs before they could reach a device.
 
@@ -94,9 +94,13 @@ Self-audit performed before declaring this build complete, as required by the pr
 
 ## Localization & RTL
 
-✅ English and Arabic are fully translated; Arabic renders RTL correctly (verified structurally — `I18nManager` flag flips and the RTL sync hook is exercised, though full mirrored-layout visual QA needs a device).
+🟡 This category had a real, self-caught defect: translation content existed for onboarding and other screens, but most screens never called `useTranslation()` and rendered hardcoded English regardless of language — so even Arabic's complete catalog sat unused everywhere but a handful of screens. Fixed for onboarding (all 7 steps), the shared location picker, the tab bar, every native screen-header title, and the language picker itself, each verified by a new automated locale-parity test (`src/i18n/__tests__/locales.test.ts`, 31 tests) that checks every locale for key parity, orphaned keys, and empty strings.
 
-🟡 Nine more languages are scaffolded (core navigation only, falling back to English elsewhere) — see `docs/LIMITATIONS.md` for exactly what's translated vs. pending.
+⛔ Still not wired to `useTranslation()`, so still English-only regardless of language setting: Ramadan, Du'a, Islamic Calendar, Prayer Tracker, Mosques, and Qur'an screens, plus five Settings sub-screens. See `docs/LIMITATIONS.md` for the exact list.
+
+✅ Arabic renders RTL correctly on the screens that are wired (verified structurally — `I18nManager` flag flips and the RTL sync hook is exercised, though full mirrored-layout visual QA needs a device).
+
+🟡 Nine more languages cover onboarding, navigation, and core screens (matching what's actually wired), falling back to English elsewhere — see `docs/LIMITATIONS.md` for exactly what's translated vs. pending. None of the translations, Arabic included, have had a professional linguist review.
 
 ## Religious-content integrity
 
@@ -114,4 +118,4 @@ Self-audit performed before declaring this build complete, as required by the pr
 
 ---
 
-**Bottom line**: the app is a real, working, thoroughly domain-tested implementation — not a mockup — with every gap that remains explicitly named, reasoned about, and given a concrete path to closing it, rather than silently faked or left as an unmarked TODO. The highest-priority next steps, in order, are: (1) real iOS/Android device testing (including verifying the background task's actual firing cadence), (2) scholarly review of the du'a content, (3) a Google Places API key for the mosque finder, (4) professional translation review for the nine partial languages.
+**Bottom line**: the app is a real, working, thoroughly domain-tested implementation — not a mockup — with every gap that remains explicitly named, reasoned about, and given a concrete path to closing it, rather than silently faked or left as an unmarked TODO. This audit pass itself caught a real defect (most screens not actually wired to translations despite the content existing) and fixed the highest-impact instance of it. The highest-priority next steps, in order, are: (1) real iOS/Android device testing (including verifying the background task's actual firing cadence), (2) wiring `useTranslation()` into the remaining six screens and five settings sub-screens listed in `docs/LIMITATIONS.md`, (3) scholarly review of the du'a content, (4) a Google Places API key for the mosque finder, (5) professional translation review for all non-English languages.

@@ -1,7 +1,59 @@
 {
-  "common": { "appName": "DonSufi", "next": "Avanti", "back": "Indietro", "skip": "Salta", "done": "Fatto", "save": "Salva", "cancel": "Annulla", "retry": "Riprova", "loading": "Caricamento...", "offline": "Sei offline", "search": "Cerca", "settings": "Impostazioni", "today": "Oggi", "close": "Chiudi" },
+  "common": { "appName": "DonSufi", "next": "Avanti", "back": "Indietro", "skip": "Salta", "done": "Fatto", "save": "Salva", "cancel": "Annulla", "retry": "Riprova", "loading": "Caricamento...", "offline": "Sei offline", "search": "Cerca", "settings": "Impostazioni", "today": "Oggi", "close": "Chiudi", "partialTranslation": "traduzione parziale" },
   "nav": { "home": "Home", "prayerTimes": "Orari", "quran": "Corano", "qibla": "Qibla", "more": "Altro" },
   "more": { "ramadan": "Ramadan", "dua": "Suppliche", "calendar": "Calendario islamico", "tracker": "Monitoraggio preghiere", "mosques": "Moschee", "settings": "Impostazioni" },
   "home": { "nextPrayer": "Prossima preghiera", "currentPrayer": "Preghiera attuale", "remaining": "rimanenti", "todaySchedule": "Preghiere di oggi" },
-  "prayers": { "fajr": "Fajr", "sunrise": "Alba", "dhuhr": "Dhuhr", "asr": "Asr", "sunset": "Tramonto", "maghrib": "Maghrib", "isha": "Isha" }
+  "prayers": { "fajr": "Fajr", "sunrise": "Alba", "dhuhr": "Dhuhr", "asr": "Asr", "sunset": "Tramonto", "maghrib": "Maghrib", "isha": "Isha" },
+  "onboarding": {
+    "welcomeTitle": "Benvenuto su DonSufi",
+    "welcomeBody": "Orari di preghiera precisi, promemoria rispettosi e gli elementi essenziali della pratica quotidiana -- privato per progettazione e realizzato per funzionare offline.",
+    "languageTitle": "Scegli la tua lingua",
+    "locationTitle": "Dove ti trovi?",
+    "locationBody": "Lo usiamo solo per calcolare orari di preghiera precisi e la direzione della Qibla. Puoi anche impostarlo manualmente.",
+    "useGps": "Usa la mia posizione attuale",
+    "enterManually": "Inserisci la posizione manualmente",
+    "methodTitle": "Metodo di calcolo",
+    "madhabTitle": "Madhhab (calcolo dell'Asr)",
+    "madhabShafiLabel": "Standard (shafi'ita, malikita, hanbalita)",
+    "madhabShafiDescription": "L'Asr inizia quando un'ombra è uguale alla lunghezza dell'oggetto",
+    "madhabHanafiLabel": "Hanafita",
+    "madhabHanafiDescription": "L'Asr inizia quando un'ombra è il doppio della lunghezza dell'oggetto",
+    "notificationsTitle": "Notifiche di preghiera",
+    "notificationsBody": "Scegli come vuoi essere avvisato per ogni preghiera. Puoi modificarlo in qualsiasi momento nelle Impostazioni.",
+    "enableNotifications": "Attiva le notifiche dell'Adhan",
+    "privacyTitle": "La tua privacy",
+    "privacyBody": "La tua posizione e la cronologia delle preghiere restano su questo dispositivo. Niente viene venduto, niente viene tracciato a scopo pubblicitario. Consulta l'informativa sulla privacy completa nelle Impostazioni.",
+    "getStarted": "Inizia",
+    "selectedLocation": "Selezionato: {{label}}"
+  },
+  "qibla": {
+    "title": "Direzione della Qibla",
+    "calibrate": "Muovi il telefono a forma di 8 per calibrare la bussola.",
+    "lowAccuracy": "La precisione della bussola è bassa in questo momento.",
+    "noSensor": "Questo dispositivo non ha un sensore bussola. Viene mostrato invece un rilevamento fisso.",
+    "distance": "Distanza dalla Kaaba"
+  },
+  "settings": {
+    "prayer": "Impostazioni di preghiera",
+    "notifications": "Impostazioni notifiche",
+    "appearance": "Aspetto",
+    "language": "Lingua",
+    "accessibility": "Accessibilità",
+    "about": "Informazioni e privacy",
+    "restartNeededTitle": "Riavvio necessario",
+    "restartNeededMessage": "Passare da una lingua da sinistra a destra a una da destra a sinistra richiede il riavvio dell'app per completare il capovolgimento del layout.",
+    "translationStatusNote": "L'inglese e l'arabo dispongono di contenuti di traduzione completi. Le altre lingue attualmente coprono l'onboarding, la navigazione e le schermate principali -- alcune schermate secondarie potrebbero ancora apparire in inglese finché non saranno completamente tradotte."
+  },
+  "locationPicker": {
+    "useGps": "Usa la mia posizione attuale",
+    "orSearchCity": "oppure cerca una città",
+    "searchPlaceholder": "es. Lagos, Nigeria",
+    "cityGeocodingOffline": "La ricerca della città richiede una connessione Internet.",
+    "enterManually": "Inserisci le coordinate manualmente",
+    "hideManualEntry": "Nascondi inserimento manuale",
+    "latitudePlaceholder": "Latitudine",
+    "longitudePlaceholder": "Longitudine",
+    "invalidCoordinates": "Inserisci una latitudine valida (-90 a 90) e una longitudine valida (-180 a 180).",
+    "useTheseCoordinates": "Usa queste coordinate"
+  }
 }

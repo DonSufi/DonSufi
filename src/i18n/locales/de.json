@@ -1,7 +1,59 @@
 {
-  "common": { "appName": "DonSufi", "next": "Weiter", "back": "Zurück", "skip": "Überspringen", "done": "Fertig", "save": "Speichern", "cancel": "Abbrechen", "retry": "Erneut versuchen", "loading": "Wird geladen...", "offline": "Du bist offline", "search": "Suchen", "settings": "Einstellungen", "today": "Heute", "close": "Schließen" },
+  "common": { "appName": "DonSufi", "next": "Weiter", "back": "Zurück", "skip": "Überspringen", "done": "Fertig", "save": "Speichern", "cancel": "Abbrechen", "retry": "Erneut versuchen", "loading": "Wird geladen...", "offline": "Du bist offline", "search": "Suchen", "settings": "Einstellungen", "today": "Heute", "close": "Schließen", "partialTranslation": "teilweise übersetzt" },
   "nav": { "home": "Start", "prayerTimes": "Gebetszeiten", "quran": "Koran", "qibla": "Qibla", "more": "Mehr" },
   "more": { "ramadan": "Ramadan", "dua": "Bittgebete", "calendar": "Islamischer Kalender", "tracker": "Gebets-Tracker", "mosques": "Moscheen", "settings": "Einstellungen" },
   "home": { "nextPrayer": "Nächstes Gebet", "currentPrayer": "Aktuelles Gebet", "remaining": "verbleibend", "todaySchedule": "Heutige Gebete" },
-  "prayers": { "fajr": "Fajr", "sunrise": "Sonnenaufgang", "dhuhr": "Dhuhr", "asr": "Asr", "sunset": "Sonnenuntergang", "maghrib": "Maghrib", "isha": "Isha" }
+  "prayers": { "fajr": "Fajr", "sunrise": "Sonnenaufgang", "dhuhr": "Dhuhr", "asr": "Asr", "sunset": "Sonnenuntergang", "maghrib": "Maghrib", "isha": "Isha" },
+  "onboarding": {
+    "welcomeTitle": "Willkommen bei DonSufi",
+    "welcomeBody": "Genaue Gebetszeiten, respektvolle Erinnerungen und das Wesentliche der täglichen Praxis -- privat konzipiert und für die Offline-Nutzung gebaut.",
+    "languageTitle": "Wähle deine Sprache",
+    "locationTitle": "Wo befindest du dich?",
+    "locationBody": "Wir verwenden dies nur, um genaue Gebetszeiten und die Qibla-Richtung zu berechnen. Du kannst es auch manuell festlegen.",
+    "useGps": "Meinen aktuellen Standort verwenden",
+    "enterManually": "Standort manuell eingeben",
+    "methodTitle": "Berechnungsmethode",
+    "madhabTitle": "Madhhab (Asr-Berechnung)",
+    "madhabShafiLabel": "Standard (Schafiitisch, Malikitisch, Hanbalitisch)",
+    "madhabShafiDescription": "Asr beginnt, wenn ein Schatten der Objektlänge entspricht",
+    "madhabHanafiLabel": "Hanafitisch",
+    "madhabHanafiDescription": "Asr beginnt, wenn ein Schatten doppelt so lang wie das Objekt ist",
+    "notificationsTitle": "Gebetsbenachrichtigungen",
+    "notificationsBody": "Wähle, wie du für jedes Gebet erinnert werden möchtest. Du kannst dies jederzeit in den Einstellungen ändern.",
+    "enableNotifications": "Adhan-Benachrichtigungen aktivieren",
+    "privacyTitle": "Deine Privatsphäre",
+    "privacyBody": "Dein Standort und dein Gebetsverlauf bleiben auf diesem Gerät. Nichts wird verkauft, nichts wird zu Werbezwecken verfolgt. Die vollständige Datenschutzerklärung findest du in den Einstellungen.",
+    "getStarted": "Loslegen",
+    "selectedLocation": "Ausgewählt: {{label}}"
+  },
+  "qibla": {
+    "title": "Qibla-Richtung",
+    "calibrate": "Bewege dein Telefon in einer 8er-Form, um den Kompass zu kalibrieren.",
+    "lowAccuracy": "Die Kompassgenauigkeit ist gerade niedrig.",
+    "noSensor": "Dieses Gerät hat keinen Kompasssensor. Stattdessen wird eine feste Peilung angezeigt.",
+    "distance": "Entfernung zur Kaaba"
+  },
+  "settings": {
+    "prayer": "Gebetseinstellungen",
+    "notifications": "Benachrichtigungseinstellungen",
+    "appearance": "Erscheinungsbild",
+    "language": "Sprache",
+    "accessibility": "Barrierefreiheit",
+    "about": "Über & Datenschutz",
+    "restartNeededTitle": "Neustart erforderlich",
+    "restartNeededMessage": "Der Wechsel zwischen einer Sprache von links nach rechts und einer von rechts nach links erfordert einen Neustart der App, um die Spiegelung des Layouts abzuschließen.",
+    "translationStatusNote": "Englisch und Arabisch verfügen über vollständige Übersetzungsinhalte. Andere Sprachen decken derzeit das Onboarding, die Navigation und die Kernbildschirme ab -- einige sekundäre Bildschirme können bis zur vollständigen Übersetzung weiterhin auf Englisch erscheinen."
+  },
+  "locationPicker": {
+    "useGps": "Meinen aktuellen Standort verwenden",
+    "orSearchCity": "oder nach einer Stadt suchen",
+    "searchPlaceholder": "z. B. Lagos, Nigeria",
+    "cityGeocodingOffline": "Die Stadtsuche benötigt eine Internetverbindung.",
+    "enterManually": "Koordinaten manuell eingeben",
+    "hideManualEntry": "Manuelle Eingabe ausblenden",
+    "latitudePlaceholder": "Breitengrad",
+    "longitudePlaceholder": "Längengrad",
+    "invalidCoordinates": "Gib einen gültigen Breitengrad (-90 bis 90) und Längengrad (-180 bis 180) ein.",
+    "useTheseCoordinates": "Diese Koordinaten verwenden"
+  }
 }

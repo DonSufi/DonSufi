@@ -32,7 +32,7 @@ npm run lint        # ESLint
 - **Mosque finder** (`src/data/mosques/`) — Google Places integration; shows a clear "not configured" state rather than fabricated results when no API key is present.
 - **State/storage** (`src/state/`, `src/storage/`) — everything is local-first via AsyncStorage; there is no backend and no account system.
 - **UI** (`app/`, `src/components/`, `src/theme/`) — `expo-router` file-based navigation, a small design system (emerald/midnight-blue/gold accents, light/dark), and RTL-aware layouts.
-- **i18n** (`src/i18n/`) — `i18next`; English and Arabic are fully translated, nine more languages are scaffolded (see `docs/LIMITATIONS.md`).
+- **i18n** (`src/i18n/`) — `i18next`; onboarding, the tab bar, screen titles, and the language picker are fully wired for all 11 locales (English and Arabic have complete translation content; nine more cover this same scope). Several secondary screens aren't wired to translations yet — see `docs/LIMITATIONS.md` for the exact list.
 
 ## Documentation
 

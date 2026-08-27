@@ -9,6 +9,7 @@ module.exports = {
         '<rootDir>/src/domain/**/__tests__/**/*.test.ts',
         '<rootDir>/src/utils/**/__tests__/**/*.test.ts',
         '<rootDir>/src/data/**/__tests__/**/*.test.ts',
+        '<rootDir>/src/i18n/**/__tests__/**/*.test.ts',
       ],
       transform: {
         '^.+\\.[jt]sx?$': ['babel-jest', { presets: ['babel-preset-expo'] }],

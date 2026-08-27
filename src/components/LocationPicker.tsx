@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ActivityIndicator, TextInput, View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 import { resolveGpsLocation, searchLocations, buildManualLocation } from '../domain/location/locationService';
 import { AppLocation } from '../domain/location/types';
@@ -14,6 +15,7 @@ interface LocationPickerProps {
 
 export function LocationPicker({ onSelect }: LocationPickerProps) {
   const theme = useTheme();
+  const { t } = useTranslation();
   const [gpsLoading, setGpsLoading] = useState(false);
   const [gpsError, setGpsError] = useState<string | null>(null);
   const [query, setQuery] = useState('');
@@ -48,7 +50,7 @@ export function LocationPicker({ onSelect }: LocationPickerProps) {
     setSearching(false);
     const ok = found.filter((r): r is { ok: true; location: AppLocation } => r.ok);
     if (ok.length === 0 && found.some((r) => !r.ok)) {
-      setSearchError('city search needs a connection');
+      setSearchError(t('locationPicker.cityGeocodingOffline'));
     }
     setResults(ok.map((r) => r.location));
   }
@@ -57,7 +59,7 @@ export function LocationPicker({ onSelect }: LocationPickerProps) {
     const lat = parseFloat(manualLat);
     const lon = parseFloat(manualLon);
     if (Number.isNaN(lat) || Number.isNaN(lon) || lat < -90 || lat > 90 || lon < -180 || lon > 180) {
-      setSearchError('enter a valid latitude (-90 to 90) and longitude (-180 to 180)');
+      setSearchError(t('locationPicker.invalidCoordinates'));
       return;
     }
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone ?? 'UTC';
@@ -66,7 +68,7 @@ export function LocationPicker({ onSelect }: LocationPickerProps) {
 
   return (
     <View style={{ gap: theme.spacing.md }}>
-      <Button label="Use my current location" onPress={handleUseGps} loading={gpsLoading} />
+      <Button label={t('locationPicker.useGps')} onPress={handleUseGps} loading={gpsLoading} />
       {gpsError ? (
         <Text variant="caption" color="danger">
           {gpsError}
@@ -74,12 +76,12 @@ export function LocationPicker({ onSelect }: LocationPickerProps) {
       ) : null}
 
       <Text variant="caption" color="secondary">
-        or search for a city
+        {t('locationPicker.orSearchCity')}
       </Text>
       <TextInput
         value={query}
         onChangeText={handleSearch}
-        placeholder="e.g. Lagos, Nigeria"
+        placeholder={t('locationPicker.searchPlaceholder')}
         placeholderTextColor={theme.colors.textSecondary}
         style={{
           borderWidth: 1,
@@ -99,13 +101,17 @@ export function LocationPicker({ onSelect }: LocationPickerProps) {
         <ListRow key={r.id} label={r.label} onPress={() => onSelect(r)} icon="location-outline" />
       ))}
 
-      <Button label={manualOpen ? 'Hide manual entry' : 'Enter coordinates manually'} variant="ghost" onPress={() => setManualOpen((v) => !v)} />
+      <Button
+        label={manualOpen ? t('locationPicker.hideManualEntry') : t('locationPicker.enterManually')}
+        variant="ghost"
+        onPress={() => setManualOpen((v) => !v)}
+      />
       {manualOpen && (
         <View style={{ gap: theme.spacing.sm }}>
           <TextInput
             value={manualLat}
             onChangeText={setManualLat}
-            placeholder="Latitude"
+            placeholder={t('locationPicker.latitudePlaceholder')}
             keyboardType="numbers-and-punctuation"
             placeholderTextColor={theme.colors.textSecondary}
             style={{ borderWidth: 1, borderColor: theme.colors.border, borderRadius: theme.radius.md, padding: theme.spacing.md, color: theme.colors.textPrimary }}
@@ -113,12 +119,12 @@ export function LocationPicker({ onSelect }: LocationPickerProps) {
           <TextInput
             value={manualLon}
             onChangeText={setManualLon}
-            placeholder="Longitude"
+            placeholder={t('locationPicker.longitudePlaceholder')}
             keyboardType="numbers-and-punctuation"
             placeholderTextColor={theme.colors.textSecondary}
             style={{ borderWidth: 1, borderColor: theme.colors.border, borderRadius: theme.radius.md, padding: theme.spacing.md, color: theme.colors.textPrimary }}
           />
-          <Button label="Use these coordinates" variant="secondary" onPress={handleManualSubmit} />
+          <Button label={t('locationPicker.useTheseCoordinates')} variant="secondary" onPress={handleManualSubmit} />
         </View>
       )}
     </View>

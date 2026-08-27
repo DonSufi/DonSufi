@@ -13,7 +13,8 @@
     "search": "Search",
     "settings": "Settings",
     "today": "Today",
-    "close": "Close"
+    "close": "Close",
+    "partialTranslation": "partial translation"
   },
   "nav": {
     "home": "Home",
@@ -55,11 +56,17 @@
     "enterManually": "Enter location manually",
     "methodTitle": "Calculation method",
     "madhabTitle": "Madhhab (Asr calculation)",
+    "madhabShafiLabel": "Standard (Shafi'i, Maliki, Hanbali)",
+    "madhabShafiDescription": "Asr begins when a shadow equals object length",
+    "madhabHanafiLabel": "Hanafi",
+    "madhabHanafiDescription": "Asr begins when a shadow is twice the object length",
     "notificationsTitle": "Prayer notifications",
     "notificationsBody": "Choose how you'd like to be reminded for each prayer. You can change this anytime in Settings.",
+    "enableNotifications": "Enable Adhan notifications",
     "privacyTitle": "Your privacy",
     "privacyBody": "Your location and prayer history stay on this device. Nothing is sold, nothing is tracked for advertising. See the full privacy policy in Settings.",
-    "getStarted": "Get started"
+    "getStarted": "Get started",
+    "selectedLocation": "Selected: {{label}}"
   },
   "qibla": {
     "title": "Qibla Direction",
@@ -74,6 +81,21 @@
     "appearance": "Appearance",
     "language": "Language",
     "accessibility": "Accessibility",
-    "about": "About & Privacy"
+    "about": "About & Privacy",
+    "restartNeededTitle": "Restart needed",
+    "restartNeededMessage": "Switching between left-to-right and right-to-left languages needs an app restart to finish mirroring the layout.",
+    "translationStatusNote": "English and Arabic have complete translation content. Other languages currently cover onboarding, navigation, and core screens -- some secondary screens may still appear in English until fully translated."
+  },
+  "locationPicker": {
+    "useGps": "Use my current location",
+    "orSearchCity": "or search for a city",
+    "searchPlaceholder": "e.g. Lagos, Nigeria",
+    "cityGeocodingOffline": "City search needs an internet connection.",
+    "enterManually": "Enter coordinates manually",
+    "hideManualEntry": "Hide manual entry",
+    "latitudePlaceholder": "Latitude",
+    "longitudePlaceholder": "Longitude",
+    "invalidCoordinates": "Enter a valid latitude (-90 to 90) and longitude (-180 to 180).",
+    "useTheseCoordinates": "Use these coordinates"
   }
 }

@@ -13,7 +13,8 @@
     "search": "بحث",
     "settings": "الإعدادات",
     "today": "اليوم",
-    "close": "إغلاق"
+    "close": "إغلاق",
+    "partialTranslation": "ترجمة جزئية"
   },
   "nav": {
     "home": "الرئيسية",
@@ -55,11 +56,17 @@
     "enterManually": "إدخال الموقع يدويًا",
     "methodTitle": "طريقة الحساب",
     "madhabTitle": "المذهب (حساب العصر)",
+    "madhabShafiLabel": "قياسي (شافعي، مالكي، حنبلي)",
+    "madhabShafiDescription": "يبدأ وقت العصر عندما يساوي الظل طول الجسم",
+    "madhabHanafiLabel": "حنفي",
+    "madhabHanafiDescription": "يبدأ وقت العصر عندما يكون الظل ضعف طول الجسم",
     "notificationsTitle": "تنبيهات الصلاة",
     "notificationsBody": "اختر كيف تريد أن يتم تذكيرك بكل صلاة. يمكنك تغيير هذا في أي وقت من الإعدادات.",
+    "enableNotifications": "تفعيل إشعارات الأذان",
     "privacyTitle": "خصوصيتك",
     "privacyBody": "يبقى موقعك وسجل صلاتك على هذا الجهاز فقط. لا يتم بيع أي شيء أو تتبعه لأغراض إعلانية. راجع سياسة الخصوصية الكاملة في الإعدادات.",
-    "getStarted": "ابدأ"
+    "getStarted": "ابدأ",
+    "selectedLocation": "تم الاختيار: {{label}}"
   },
   "qibla": {
     "title": "اتجاه القبلة",
@@ -74,6 +81,21 @@
     "appearance": "المظهر",
     "language": "اللغة",
     "accessibility": "إمكانية الوصول",
-    "about": "حول والخصوصية"
+    "about": "حول والخصوصية",
+    "restartNeededTitle": "إعادة التشغيل مطلوبة",
+    "restartNeededMessage": "يتطلب التبديل بين اللغات من اليسار إلى اليمين ومن اليمين إلى اليسار إعادة تشغيل التطبيق لإكمال عكس التخطيط.",
+    "translationStatusNote": "الإنجليزية والعربية تحتويان على ترجمة كاملة. اللغات الأخرى تغطي حاليًا التهيئة الأولية والتنقل والشاشات الأساسية -- قد تظهر بعض الشاشات الثانوية بالإنجليزية حتى تتم ترجمتها بالكامل."
+  },
+  "locationPicker": {
+    "useGps": "استخدم موقعي الحالي",
+    "orSearchCity": "أو ابحث عن مدينة",
+    "searchPlaceholder": "مثال: لاغوس، نيجيريا",
+    "cityGeocodingOffline": "يتطلب البحث عن المدينة اتصالاً بالإنترنت.",
+    "enterManually": "إدخال الإحداثيات يدويًا",
+    "hideManualEntry": "إخفاء الإدخال اليدوي",
+    "latitudePlaceholder": "خط العرض",
+    "longitudePlaceholder": "خط الطول",
+    "invalidCoordinates": "أدخل خط عرض صحيح (-90 إلى 90) وخط طول صحيح (-180 إلى 180).",
+    "useTheseCoordinates": "استخدام هذه الإحداثيات"
   }
 }

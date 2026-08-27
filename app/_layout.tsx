@@ -4,6 +4,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Redirect, Slot, usePathname } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import { useTranslation } from 'react-i18next';
 
 import { initI18n } from '../src/i18n';
 import { useLanguageSync } from '../src/i18n/useLanguageSync';
@@ -17,13 +18,14 @@ initI18n();
 function RootNavigation() {
   const { isLoading, onboardingComplete } = useAppState();
   const { ready } = useLanguageSync();
+  const { t } = useTranslation();
   const theme = useTheme();
   const pathname = usePathname();
 
   if (isLoading || !ready) {
     return (
       <Screen>
-        <Text>Loading…</Text>
+        <Text>{t('common.loading')}</Text>
       </Screen>
     );
   }

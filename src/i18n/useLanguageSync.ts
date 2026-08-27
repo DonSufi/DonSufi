@@ -3,7 +3,7 @@ import { I18nManager } from 'react-native';
 import i18next from 'i18next';
 
 import { loadLanguage, saveLanguage } from '../storage/settingsStore';
-import { isRTL } from './index';
+import { isRTL } from './languages';
 
 function applyRTL(wantsRTL: boolean): boolean {
   if (wantsRTL === I18nManager.isRTL) return false;

@@ -13,28 +13,10 @@ import it from './locales/it.json';
 import ms from './locales/ms.json';
 import tr from './locales/tr.json';
 import ur from './locales/ur.json';
+import { LanguageCode, SUPPORTED_LANGUAGES } from './languages';
 
-export const SUPPORTED_LANGUAGES = [
-  { code: 'en', label: 'English', rtl: false, complete: true },
-  { code: 'ar', label: 'العربية', rtl: true, complete: true },
-  { code: 'fr', label: 'Français', rtl: false, complete: false },
-  { code: 'ur', label: 'اردو', rtl: true, complete: false },
-  { code: 'tr', label: 'Türkçe', rtl: false, complete: false },
-  { code: 'id', label: 'Bahasa Indonesia', rtl: false, complete: false },
-  { code: 'ms', label: 'Bahasa Melayu', rtl: false, complete: false },
-  { code: 'es', label: 'Español', rtl: false, complete: false },
-  { code: 'it', label: 'Italiano', rtl: false, complete: false },
-  { code: 'de', label: 'Deutsch', rtl: false, complete: false },
-  { code: 'bn', label: 'বাংলা', rtl: false, complete: false },
-] as const;
-
-export type LanguageCode = (typeof SUPPORTED_LANGUAGES)[number]['code'];
-
-export const RTL_LANGUAGES: readonly LanguageCode[] = ['ar', 'ur'];
-
-export function isRTL(code: string): boolean {
-  return (RTL_LANGUAGES as readonly string[]).includes(code);
-}
+export { SUPPORTED_LANGUAGES, RTL_LANGUAGES, isRTL } from './languages';
+export type { LanguageCode } from './languages';
 
 function detectDeviceLanguage(): LanguageCode {
   const tag = Localization.getLocales()[0]?.languageCode ?? 'en';
